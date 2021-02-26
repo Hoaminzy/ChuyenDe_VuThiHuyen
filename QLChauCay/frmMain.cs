@@ -145,5 +145,30 @@ namespace QLChauCay
             tk.ShowDialog();
             this.Show();
         }
+
+     
+        private void baoCaoHoaDon_Click(object sender, EventArgs e)
+        {
+            frm_RPHoaDon tk = new frm_RPHoaDon();
+            this.Hide();
+            tk.ShowDialog();
+            this.Show();
+        }
+
+        private void baoCaoChauCay_Click(object sender, EventArgs e)
+        {
+            frm_RpChauCay chau = new frm_RpChauCay();
+            this.Hide();
+            chau.ShowDialog();
+            this.Show();
+        }
+
+        private void baoCaoNhanVien_Click(object sender, EventArgs e)
+        {
+            frm_RpNhanVien chau = new frm_RpNhanVien();
+            this.Hide();
+            chau.ShowDialog();
+            this.Show();
+        }
     }
 }

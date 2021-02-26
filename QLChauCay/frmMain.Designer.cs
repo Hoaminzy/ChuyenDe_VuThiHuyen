@@ -40,6 +40,9 @@ namespace QLChauCay
             this.striphoadon = new System.Windows.Forms.ToolStripMenuItem();
             this.stripkhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.stripthongke = new System.Windows.Forms.ToolStripMenuItem();
+            this.baoCaoHoaDon = new System.Windows.Forms.ToolStripMenuItem();
+            this.baoCaoChauCay = new System.Windows.Forms.ToolStripMenuItem();
+            this.baoCaoNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.stripthoat = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -85,7 +88,7 @@ namespace QLChauCay
             // stripthongtintaikhoan
             // 
             this.stripthongtintaikhoan.Name = "stripthongtintaikhoan";
-            this.stripthongtintaikhoan.Size = new System.Drawing.Size(180, 22);
+            this.stripthongtintaikhoan.Size = new System.Drawing.Size(178, 22);
             this.stripthongtintaikhoan.Text = "Thông tin tài khoản";
             this.stripthongtintaikhoan.Click += new System.EventHandler(this.stripthongtintaikhoan_Click);
             // 
@@ -142,9 +145,34 @@ namespace QLChauCay
             // 
             // stripthongke
             // 
+            this.stripthongke.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.baoCaoHoaDon,
+            this.baoCaoChauCay,
+            this.baoCaoNhanVien});
             this.stripthongke.Name = "stripthongke";
             this.stripthongke.Size = new System.Drawing.Size(70, 20);
             this.stripthongke.Text = "Thống Kê";
+            // 
+            // baoCaoHoaDon
+            // 
+            this.baoCaoHoaDon.Name = "baoCaoHoaDon";
+            this.baoCaoHoaDon.Size = new System.Drawing.Size(180, 22);
+            this.baoCaoHoaDon.Text = "Hóa Đơn";
+            this.baoCaoHoaDon.Click += new System.EventHandler(this.baoCaoHoaDon_Click);
+            // 
+            // baoCaoChauCay
+            // 
+            this.baoCaoChauCay.Name = "baoCaoChauCay";
+            this.baoCaoChauCay.Size = new System.Drawing.Size(180, 22);
+            this.baoCaoChauCay.Text = "Chậu Cây";
+            this.baoCaoChauCay.Click += new System.EventHandler(this.baoCaoChauCay_Click);
+            // 
+            // baoCaoNhanVien
+            // 
+            this.baoCaoNhanVien.Name = "baoCaoNhanVien";
+            this.baoCaoNhanVien.Size = new System.Drawing.Size(180, 22);
+            this.baoCaoNhanVien.Text = "Nhân Viên";
+            this.baoCaoNhanVien.Click += new System.EventHandler(this.baoCaoNhanVien_Click);
             // 
             // stripthoat
             // 
@@ -280,6 +308,9 @@ namespace QLChauCay
         private System.Windows.Forms.ToolStripMenuItem stripthoat;
         private System.Windows.Forms.ToolStripMenuItem striploaichaucay;
         private System.Windows.Forms.ToolStripMenuItem stripchaucay;
+        private System.Windows.Forms.ToolStripMenuItem baoCaoHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem baoCaoChauCay;
+        private System.Windows.Forms.ToolStripMenuItem baoCaoNhanVien;
     }
 }
 

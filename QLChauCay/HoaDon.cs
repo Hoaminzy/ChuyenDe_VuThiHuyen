@@ -18,15 +18,14 @@ namespace QLChauCay
         private void HoaDon_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLChauCayDataSet.tbl_HoaDon' table. You can move, or remove it, as needed.
-            this.tbl_HoaDonTableAdapter.Fill(this.qLChauCayDataSet.tbl_HoaDon);
+       //     this.tbl_HoaDonTableAdapter.Fill(this.qLChauCayDataSet.tbl_HoaDon);
             dghoadon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.getMaHH();
-              //  this.getNV();
+                this.getNV();
             this.getMaHD();
-            //    this.getKH();
+               this.getKH();
             loadDL();
             dtngaylap.Enabled = false;
-            cbbstatus.Enabled = false;
             btnluu.Enabled = true;
             btnsua.Enabled = false;
             btnhuy.Enabled = false;
@@ -50,7 +49,6 @@ namespace QLChauCay
             btnluu.Enabled = true;
             btnhuy.Enabled = true;
             btnsua.Enabled = true;
-            cbbstatus.Enabled = true;
             dtngaylap.Enabled = true;
         }
 
@@ -58,7 +56,7 @@ namespace QLChauCay
         {
             conn = new SqlConnection(ConnectionString.connectionString);
             conn.Open();
-            string query = "select * from tbl_NhanVien ";
+            string query = "select * from tbl_NhanVien  ";
             cmd = new SqlCommand(query, conn);
             adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -76,7 +74,7 @@ namespace QLChauCay
         {
             conn = new SqlConnection(ConnectionString.connectionString);
             conn.Open();
-            string query = "select * from tbl_KhachHang";
+            string query = "select * from tbl_KhachHang ";
             cmd = new SqlCommand(query, conn);
             adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -85,7 +83,7 @@ namespace QLChauCay
             //adapter.Fill(data);
             cbbkh.DisplayMember = "sTenKH";
             cbbkh.ValueMember = "idKhachHang";
-      //      txtmakh.DataBindings.Clear();
+            txtmakh.DataBindings.Clear();
             txtmakh.DataBindings.Add(new Binding("Text", cbbkh.DataSource, "idKhachHang"));
             conn.Close();
         }
@@ -93,16 +91,14 @@ namespace QLChauCay
         {
             conn = new SqlConnection(ConnectionString.connectionString);
             conn.Open();
-            string query4 = "select * from tbl_ChauCay where Status=1";
+            string query4 = "select * from tbl_ChauCay";
             cmd = new SqlCommand(query4, conn);
             adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "tbl_ChauCay");
             cbbchau.DataSource = ds.Tables[0];
-            //adapter.Fill(data);
             cbbchau.DisplayMember = "sTenChau";
             cbbchau.ValueMember = "idChau";
-            //cbMaHH.DataSource = data;
             txtmachau.DataBindings.Clear();
             txtmachau.DataBindings.Add(new Binding("Text", cbbchau.DataSource, "idChau"));
             txtdongia.DataBindings.Add(new Binding("Text", cbbchau.DataSource, "fDonGia"));
@@ -151,8 +147,6 @@ namespace QLChauCay
             //cbMaHH.DataSource = data;
             dtngaylap.DataBindings.Clear();
             dtngaylap.DataBindings.Add(new Binding("Value", cbbmahd.DataSource, "Createdate"));
-            cbbstatus.DataBindings.Clear();
-            cbbstatus.DataBindings.Add(new Binding("Text", cbbmahd.DataSource, "Status"));
             txtthanhtien.DataBindings.Clear();
             txtthanhtien.DataBindings.Add(new Binding("Text", cbbmahd.DataSource, "tong_tien"));
             cbbnv.DataBindings.Clear();
@@ -188,7 +182,6 @@ namespace QLChauCay
         {
             cbbmahd.Enabled = true;
             dtngaylap.Enabled = true;
-            cbbstatus.Enabled = true;
            
         }
 
@@ -242,15 +235,6 @@ namespace QLChauCay
                         cmd1.CommandType = CommandType.StoredProcedure;
                         cmd1.Parameters.AddWithValue("@idNhanVien", cbbnv.Text);
                         cmd1.Parameters.AddWithValue("@idKhachHang", cbbkh.Text);
-                         cmd1.Parameters.AddWithValue("@Status", cbbstatus.Text);
-
-
-                       /* if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd1.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");*/
-                        cmd1.Parameters.AddWithValue("@Createdate", dtngaylap.Text);
                         cmd1.ExecuteNonQuery();
                         //conn.Close();
 
@@ -343,10 +327,10 @@ namespace QLChauCay
                                 conn.Open();
                                 string cthd = "insert into tbl_ChiTietHoaDon (idHoaDon, idChau, sSoLuong, fDonGia) values('" + cbbmahd.Text + "','" + txtmachau.Text + "', '" + txtsl.Text + "', '" + txtdongia.Text + "')";
                                 SqlCommand cmd2 = new SqlCommand(cthd, conn);
-                             /*   cmd2.Parameters.AddWithValue("@idHoaDon", cbbmahd.Text);
+                               cmd2.Parameters.AddWithValue("@idHoaDon", cbbmahd.Text);
                                 cmd2.Parameters.AddWithValue("@idChau", txtmachau.Text);
                                 cmd2.Parameters.AddWithValue("@sSoLuong", txtsl.Text);
-                                cmd2.Parameters.AddWithValue("@fDonGia", txtdongia.Text);*/
+                                cmd2.Parameters.AddWithValue("@fDonGia", txtdongia.Text);
                                 int kq1 = (int)cmd2.ExecuteNonQuery();
                                 if (kq1 > 0)
                                 {
@@ -523,7 +507,7 @@ namespace QLChauCay
             {
                 try
                 {
-                    if (cbbmahd.Text != "" && cbbnv.Text != "" && cbbstatus.Text != "")
+                    if (cbbmahd.Text != "" && cbbnv.Text != "" )
                     {
                         conn.Open();
                         string query = "Update_HoaDon";
@@ -532,12 +516,11 @@ namespace QLChauCay
                         cmd3.Parameters.AddWithValue("@idHoaDon", cbbmahd.SelectedValue);
                         cmd3.Parameters.AddWithValue("@idNhanVien", txtnglap.Text);
                         cmd3.Parameters.AddWithValue("@idKhachHang", txtmakh.Text);
-                        cmd3.Parameters.AddWithValue("@Status", cbbstatus.Text);
                         cmd3.Parameters.AddWithValue("@Createdate", dtngaylap.Value);
 
                         cmd3.ExecuteNonQuery();
-                        if (txtsl.Text != "")
-                        {
+                      /*  if (txtsl.Text != "")
+                        {*/
                             string query1 = "Update_CTHoaDon";
                             //string query1 = "update cthoadon set ma_hd='"+cbMaHD.SelectedValue+"', ma_hh = '"+txtMaHH.Text+"', sl_xuat='"+txtSoLuong.Text+"' where ma_hd = '"+cbMaHD.Text+"' and ma_hh = '"+txtMaHH.Text+"'";
                             SqlCommand cmd4 = new SqlCommand(query1, conn);
@@ -556,8 +539,8 @@ namespace QLChauCay
                             }
                             else MessageBox.Show("Sửa chi tiết hóa đơn thất bại.");
                             conn.Close();
-                        }
-                        else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
+                        /*}
+                        else MessageBox.Show("Hãy nhập đầy đủ thông tin.");*/
                     }
                     else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
                 }

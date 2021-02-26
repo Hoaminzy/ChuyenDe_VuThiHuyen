@@ -42,8 +42,6 @@ namespace QLChauCay
                     lbsdt.DataBindings.Add("Text", dt, "sSDT");
                     lbns.DataBindings.Add("Text", dt, "sNgaySinh");
                     lbdc.DataBindings.Add("Text", dt, "sDiaChi");
-                    lbngaytao.DataBindings.Add("Text", dt, "Createdate");
-                    
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }

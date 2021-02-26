@@ -39,7 +39,6 @@ namespace QLChauCay
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.btncapnhat = new System.Windows.Forms.Button();
             this.btndong = new System.Windows.Forms.Button();
             this.lbtk = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@ namespace QLChauCay
             this.lbns = new System.Windows.Forms.Label();
             this.lbsdt = new System.Windows.Forms.Label();
             this.lbdc = new System.Windows.Forms.Label();
-            this.lbngaytao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,16 +150,6 @@ namespace QLChauCay
             this.label9.Size = new System.Drawing.Size(106, 15);
             this.label9.TabIndex = 8;
             this.label9.Text = "Số Điện Thoại: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(41, 347);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Ngày Tạo: ";
             // 
             // btncapnhat
             // 
@@ -271,23 +259,11 @@ namespace QLChauCay
             this.lbdc.TabIndex = 19;
             this.lbdc.Text = "label12";
             // 
-            // lbngaytao
-            // 
-            this.lbngaytao.AutoSize = true;
-            this.lbngaytao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbngaytao.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbngaytao.Location = new System.Drawing.Point(166, 347);
-            this.lbngaytao.Name = "lbngaytao";
-            this.lbngaytao.Size = new System.Drawing.Size(55, 15);
-            this.lbngaytao.TabIndex = 20;
-            this.lbngaytao.Text = "label12";
-            // 
             // frmThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 442);
-            this.Controls.Add(this.lbngaytao);
             this.Controls.Add(this.lbdc);
             this.Controls.Add(this.lbsdt);
             this.Controls.Add(this.lbns);
@@ -298,7 +274,6 @@ namespace QLChauCay
             this.Controls.Add(this.lbtk);
             this.Controls.Add(this.btndong);
             this.Controls.Add(this.btncapnhat);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -330,7 +305,6 @@ namespace QLChauCay
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btncapnhat;
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.Label lbtk;
@@ -341,6 +315,5 @@ namespace QLChauCay
         private System.Windows.Forms.Label lbns;
         private System.Windows.Forms.Label lbsdt;
         private System.Windows.Forms.Label lbdc;
-        private System.Windows.Forms.Label lbngaytao;
     }
 }

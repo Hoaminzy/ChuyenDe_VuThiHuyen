@@ -39,13 +39,9 @@ namespace QLChauCay
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthemmoi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtngaytao = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdnu = new System.Windows.Forms.RadioButton();
             this.rdnam = new System.Windows.Forms.RadioButton();
-            this.cbbstatus = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtmatkhau = new System.Windows.Forms.TextBox();
             this.txttaikhoan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -170,11 +166,7 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtngaytao);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.cbbstatus);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtmatkhau);
             this.groupBox1.Controls.Add(this.txttaikhoan);
             this.groupBox1.Controls.Add(this.label10);
@@ -194,27 +186,10 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.txtma);
             this.groupBox1.Location = new System.Drawing.Point(11, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 259);
+            this.groupBox1.Size = new System.Drawing.Size(548, 228);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // dtngaytao
-            // 
-            this.dtngaytao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtngaytao.Location = new System.Drawing.Point(328, 192);
-            this.dtngaytao.Name = "dtngaytao";
-            this.dtngaytao.Size = new System.Drawing.Size(153, 20);
-            this.dtngaytao.TabIndex = 31;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(251, 192);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Ngày Tạo";
             // 
             // panel1
             // 
@@ -247,27 +222,6 @@ namespace QLChauCay
             this.rdnam.Text = "Nam";
             this.rdnam.UseVisualStyleBackColor = true;
             // 
-            // cbbstatus
-            // 
-            this.cbbstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbbstatus.FormattingEnabled = true;
-            this.cbbstatus.Items.AddRange(new object[] {
-            "Kích Hoạt",
-            "Khóa"});
-            this.cbbstatus.Location = new System.Drawing.Point(328, 155);
-            this.cbbstatus.Name = "cbbstatus";
-            this.cbbstatus.Size = new System.Drawing.Size(153, 21);
-            this.cbbstatus.TabIndex = 9;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(251, 158);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Trạng Thái";
-            // 
             // txtmatkhau
             // 
             this.txtmatkhau.Location = new System.Drawing.Point(85, 152);
@@ -296,7 +250,7 @@ namespace QLChauCay
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(85, 222);
+            this.txtdiachi.Location = new System.Drawing.Point(85, 188);
             this.txtdiachi.Multiline = true;
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(140, 20);
@@ -305,7 +259,7 @@ namespace QLChauCay
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 225);
+            this.label3.Location = new System.Drawing.Point(6, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 12;
@@ -331,10 +285,10 @@ namespace QLChauCay
             // 
             // txtsdt
             // 
-            this.txtsdt.Location = new System.Drawing.Point(85, 189);
+            this.txtsdt.Location = new System.Drawing.Point(328, 152);
             this.txtsdt.Multiline = true;
             this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Size = new System.Drawing.Size(140, 20);
+            this.txtsdt.Size = new System.Drawing.Size(153, 20);
             this.txtsdt.TabIndex = 6;
             // 
             // txtcmnd
@@ -348,7 +302,7 @@ namespace QLChauCay
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 192);
+            this.label8.Location = new System.Drawing.Point(247, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 18;
@@ -416,9 +370,9 @@ namespace QLChauCay
             // drdsnhanvien
             // 
             this.drdsnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drdsnhanvien.Location = new System.Drawing.Point(19, 342);
+            this.drdsnhanvien.Location = new System.Drawing.Point(19, 323);
             this.drdsnhanvien.Name = "drdsnhanvien";
-            this.drdsnhanvien.Size = new System.Drawing.Size(948, 186);
+            this.drdsnhanvien.Size = new System.Drawing.Size(948, 205);
             this.drdsnhanvien.TabIndex = 5;
             this.drdsnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drdsnhanvien_CellContentClick);
             // 
@@ -474,14 +428,10 @@ namespace QLChauCay
         private System.Windows.Forms.TextBox txttaikhoan;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView drdsnhanvien;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rdnu;
         private System.Windows.Forms.RadioButton rdnam;
-        private System.Windows.Forms.ComboBox cbbstatus;
         private System.Windows.Forms.Button btndong;
-        private System.Windows.Forms.DateTimePicker dtngaytao;
-        private System.Windows.Forms.Label label12;
     }
 }

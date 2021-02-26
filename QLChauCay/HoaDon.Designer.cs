@@ -35,6 +35,8 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.txtmakh = new System.Windows.Forms.TextBox();
             this.txtnglap = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,10 +44,8 @@ namespace QLChauCay
             this.label14 = new System.Windows.Forms.Label();
             this.cbbnv = new System.Windows.Forms.ComboBox();
             this.dtngaylap = new System.Windows.Forms.DateTimePicker();
-            this.cbbstatus = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbmahd = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,23 +76,14 @@ namespace QLChauCay
             this.txtdong = new System.Windows.Forms.Button();
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.qLChauCayDataSet = new QLChauCay.QLChauCayDataSet();
-            this.qLChauCayDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbl_HoaDonTableAdapter = new QLChauCay.QLChauCayDataSetTableAdapters.tbl_HoaDonTableAdapter();
-            this.tblHoaDonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dghoadon)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblHoaDonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblHoaDonBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,24 +116,40 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.cbbnv);
             this.groupBox1.Controls.Add(this.dtngaylap);
-            this.groupBox1.Controls.Add(this.cbbstatus);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbbmahd);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 215);
+            this.groupBox1.Size = new System.Drawing.Size(319, 194);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 131);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 13);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Mã Khách Hàng";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 83);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 13);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Mã Nhân Viên";
+            // 
             // txtmakh
             // 
-            this.txtmakh.Location = new System.Drawing.Point(118, 155);
+            this.txtmakh.Location = new System.Drawing.Point(118, 128);
             this.txtmakh.Name = "txtmakh";
             this.txtmakh.ReadOnly = true;
             this.txtmakh.Size = new System.Drawing.Size(180, 20);
@@ -150,7 +157,7 @@ namespace QLChauCay
             // 
             // txtnglap
             // 
-            this.txtnglap.Location = new System.Drawing.Point(118, 102);
+            this.txtnglap.Location = new System.Drawing.Point(118, 75);
             this.txtnglap.Name = "txtnglap";
             this.txtnglap.ReadOnly = true;
             this.txtnglap.Size = new System.Drawing.Size(180, 20);
@@ -159,7 +166,7 @@ namespace QLChauCay
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Chartreuse;
-            this.button1.Location = new System.Drawing.Point(275, 179);
+            this.button1.Location = new System.Drawing.Point(275, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 12;
@@ -170,7 +177,7 @@ namespace QLChauCay
             // cbbkh
             // 
             this.cbbkh.FormattingEnabled = true;
-            this.cbbkh.Location = new System.Drawing.Point(118, 181);
+            this.cbbkh.Location = new System.Drawing.Point(118, 154);
             this.cbbkh.Name = "cbbkh";
             this.cbbkh.Size = new System.Drawing.Size(155, 21);
             this.cbbkh.TabIndex = 11;
@@ -178,7 +185,7 @@ namespace QLChauCay
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 184);
+            this.label14.Location = new System.Drawing.Point(16, 157);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 13);
             this.label14.TabIndex = 10;
@@ -187,7 +194,7 @@ namespace QLChauCay
             // cbbnv
             // 
             this.cbbnv.FormattingEnabled = true;
-            this.cbbnv.Location = new System.Drawing.Point(118, 128);
+            this.cbbnv.Location = new System.Drawing.Point(118, 101);
             this.cbbnv.Name = "cbbnv";
             this.cbbnv.Size = new System.Drawing.Size(180, 21);
             this.cbbnv.TabIndex = 9;
@@ -200,18 +207,6 @@ namespace QLChauCay
             this.dtngaylap.Size = new System.Drawing.Size(180, 20);
             this.dtngaylap.TabIndex = 8;
             // 
-            // cbbstatus
-            // 
-            this.cbbstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbbstatus.FormattingEnabled = true;
-            this.cbbstatus.Items.AddRange(new object[] {
-            "Hoạt Động",
-            "Khóa"});
-            this.cbbstatus.Location = new System.Drawing.Point(118, 75);
-            this.cbbstatus.Name = "cbbstatus";
-            this.cbbstatus.Size = new System.Drawing.Size(180, 21);
-            this.cbbstatus.TabIndex = 7;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -223,21 +218,12 @@ namespace QLChauCay
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 136);
+            this.label5.Location = new System.Drawing.Point(15, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Mã Nhân Viên";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Trạng Thái";
             // 
             // label3
             // 
@@ -379,7 +365,7 @@ namespace QLChauCay
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label7.Location = new System.Drawing.Point(359, 455);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 16);
+            this.label7.Size = new System.Drawing.Size(90, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Tổng Tiền: ";
             // 
@@ -400,7 +386,7 @@ namespace QLChauCay
             this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label13.Location = new System.Drawing.Point(359, 494);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 16);
+            this.label13.Size = new System.Drawing.Size(93, 16);
             this.label13.TabIndex = 5;
             this.label13.Text = "Bằng Chữ:  ";
             // 
@@ -550,48 +536,6 @@ namespace QLChauCay
             this.lbtongtien.TabIndex = 10;
             this.lbtongtien.Text = "label16";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 110);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 13);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Mã Nhân Viên";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 158);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 13);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "Mã Khách Hàng";
-            // 
-            // qLChauCayDataSet
-            // 
-            this.qLChauCayDataSet.DataSetName = "QLChauCayDataSet";
-            this.qLChauCayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qLChauCayDataSetBindingSource
-            // 
-            this.qLChauCayDataSetBindingSource.DataSource = this.qLChauCayDataSet;
-            this.qLChauCayDataSetBindingSource.Position = 0;
-            // 
-            // tblHoaDonBindingSource
-            // 
-            this.tblHoaDonBindingSource.DataMember = "tbl_HoaDon";
-            this.tblHoaDonBindingSource.DataSource = this.qLChauCayDataSetBindingSource;
-            // 
-            // tbl_HoaDonTableAdapter
-            // 
-            this.tbl_HoaDonTableAdapter.ClearBeforeFill = true;
-            // 
-            // tblHoaDonBindingSource1
-            // 
-            this.tblHoaDonBindingSource1.DataMember = "tbl_HoaDon";
-            this.tblHoaDonBindingSource1.DataSource = this.qLChauCayDataSet;
-            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,10 +567,7 @@ namespace QLChauCay
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dghoadon)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblHoaDonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblHoaDonBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,13 +580,11 @@ namespace QLChauCay
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbbmahd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtngaylap;
-        private System.Windows.Forms.ComboBox cbbstatus;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -680,10 +619,6 @@ namespace QLChauCay
         private System.Windows.Forms.TextBox txtnglap;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.BindingSource qLChauCayDataSetBindingSource;
-        private QLChauCayDataSet qLChauCayDataSet;
         private System.Windows.Forms.BindingSource tblHoaDonBindingSource;
-        private QLChauCayDataSetTableAdapters.tbl_HoaDonTableAdapter tbl_HoaDonTableAdapter;
-        private System.Windows.Forms.BindingSource tblHoaDonBindingSource1;
     }
 }

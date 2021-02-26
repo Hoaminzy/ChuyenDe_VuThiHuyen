@@ -8,6 +8,6 @@ namespace QLChauCay
 {
     class ConnectionString
     {
-        public static string connectionString = @"Data Source=DESKTOP-37JNFF6\NTHOA;Initial Catalog=QLChauCay;User ID=sa;Password=12345678";
+        public static string connectionString = @"Data Source=DESKTOP-37JNFF6\NTHOA;Initial Catalog=QLChauCay;Integrated Security=True";
     }
 }

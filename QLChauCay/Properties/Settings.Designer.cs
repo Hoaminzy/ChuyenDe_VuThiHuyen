@@ -33,5 +33,16 @@ namespace QLChauCay.Properties {
                 return ((string)(this["QLChauCayConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-37JNFF6\\NTHOA;Initial Catalog=QLChauCay;Integrated Security=T" +
+            "rue")]
+        public string QLChauCayConnectionString1 {
+            get {
+                return ((string)(this["QLChauCayConnectionString1"]));
+            }
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace QLChauCay
         private void frmLoaiChau_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLChauCayDataSet.tbl_LoaiChau' table. You can move, or remove it, as needed.
-            this.tbl_LoaiChauTableAdapter.Fill(this.qLChauCayDataSet.tbl_LoaiChau);
+           // this.tbl_LoaiChauTableAdapter.Fill(this.qLChauCayDataSet.tbl_LoaiChau);
             dgdsloaichau.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             using (conn = new SqlConnection(ConnectionString.connectionString))
             {
@@ -54,8 +54,6 @@ namespace QLChauCay
         {
             txtmaloai.ReadOnly = true;
             txtloaichau.Enabled = false;
-            cbbstatus.Enabled = false;
-            dtngaytao.Enabled = false;
            
         }
 
@@ -63,15 +61,12 @@ namespace QLChauCay
         {
             txtmaloai.ReadOnly = true;
             txtloaichau.Enabled = true;
-            cbbstatus.Enabled = true;
-            dtngaytao.Enabled = true;
 
         }
         void reset()
         {
             txtloaichau.Clear();
             txtmaloai.Clear();
-            dtngaytao.Text = DateTime.Now.ToString();
         }
 
         private void dgdsloaichau_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,18 +76,7 @@ namespace QLChauCay
             //txtManv.ReadOnly = true;
             txtmaloai.Text = dgdsloaichau.Rows[i].Cells[0].Value.ToString();
             txtloaichau.Text = dgdsloaichau.Rows[i].Cells[1].Value.ToString();
-            if (dgdsloaichau.Rows[i].Cells[2].Value.ToString() == "1")
-            {
-                cbbstatus.Text = "Hoạt Động";
-
-            }
-            else
-            {
-                cbbstatus.Text = "Khóa";
-
-            }
-            dtngaytao.Text = dgdsloaichau.Rows[i].Cells[3].Value.ToString();
-
+        
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
             btnsua.Enabled = true;
@@ -135,14 +119,6 @@ namespace QLChauCay
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@sTenLoai", txtloaichau.Text);
 
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-
-                        dtngaytao.CustomFormat = "dd/MM/yyyy";
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
                         int kq = (int)cmd.ExecuteNonQuery();
                         if (kq > 0)
                         {
@@ -184,8 +160,7 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-                string query = "update tbl_LoaiChau set Status=0 where idLoaiChau= '" + txtmaloai.Text + "' ";
-                //string query = "Delete_KhachHang";
+                string query = "Delete_LoaiChau";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)dgdsloaichau.DataSource;
@@ -219,14 +194,6 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sTenLoai", txtloaichau.Text);
 
 
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-
-                        dtngaytao.CustomFormat = "dd/MM/yyyy";
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Value);
                         int kq = (int)cmd.ExecuteNonQuery();
                         if (kq > 0)
                         {

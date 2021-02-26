@@ -34,8 +34,8 @@ namespace QLChauCay
             txtsl.Enabled = false;
             txtmota.Enabled = false;
             txtncc.Enabled = false;
-            cbbstatus.Enabled = false;
-            dtngaytao.Enabled = false;
+            txthinhanh.Enabled = false;
+            txtkichthuoc.Enabled = false;
         }
 
         void UnclockText()
@@ -50,8 +50,8 @@ namespace QLChauCay
             txtsl.Enabled = true;
             txtmota.Enabled = true;
             txtncc.Enabled = true;
-            cbbstatus.Enabled = true;
-            dtngaytao.Enabled = true;
+            txthinhanh.Enabled = true;
+            txtkichthuoc.Enabled = true;
         }
         void reset()
         {
@@ -64,8 +64,9 @@ namespace QLChauCay
             txtgianhap.Clear();
             txtsl.Clear();
             txtmota.Clear();
-            txtncc.Clear(); ;
-            dtngaytao.Text = DateTime.Now.ToString();
+            txtncc.Clear(); 
+            txthinhanh.Clear();
+            txtkichthuoc.Clear();
         }
         private void frmChau_Load(object sender, EventArgs e)
         {
@@ -109,18 +110,9 @@ namespace QLChauCay
             txtsl.Text = dgdschau.Rows[i].Cells[7].Value.ToString();
             txtmota.Text = dgdschau.Rows[i].Cells[8].Value.ToString();
             txtncc.Text = dgdschau.Rows[i].Cells[9].Value.ToString();
+            txthinhanh.Text = dgdschau.Rows[i].Cells[10].Value.ToString();
+            txtkichthuoc.Text = dgdschau.Rows[i].Cells[11].Value.ToString();
 
-            if (dgdschau.Rows[i].Cells[10].Value.ToString() == "1")
-            {
-                cbbstatus.Text = "Hoạt Động";
-
-            }
-            else
-            {
-                cbbstatus.Text = "Khóa";
-
-            }
-            dtngaytao.Text = dgdschau.Rows[i].Cells[11].Value.ToString();
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
             btnsua.Enabled = true;
@@ -214,14 +206,8 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sSoLuong", txtsl.Text);
                         cmd.Parameters.AddWithValue("@sMoTa", txtmota.Text);
                         cmd.Parameters.AddWithValue("@sNhaCungCap", txtncc.Text);
-
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-                        dtngaytao.CustomFormat = "dd/MM/yyyy";
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
+                        cmd.Parameters.AddWithValue("@sHinhAnh", txthinhanh.Text);
+                        cmd.Parameters.AddWithValue("@sKichThuoc", txtkichthuoc.Text);
                         int kq = (int)cmd.ExecuteNonQuery();
                         if (kq > 0)
                         {
@@ -256,7 +242,7 @@ namespace QLChauCay
             {
                 try
                 {
-                    if (txtten.Text != "" && txtchatlieu.Text != "" && txtmau.Text != "" && txtgia.Text != "" && txtgianhap.Text != "" && txtsl.Text != "" && cbbloai.Text != "")
+                    if (txtten.Text != "" && txtchatlieu.Text != "" && txtmau.Text != "" && txtgia.Text != "" && txtgianhap.Text != "" && txtsl.Text != "" && txtkichthuoc.Text != "" && cbbloai.Text != "")
                     {
 
                         conn.Open();
@@ -273,13 +259,8 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sSoLuong", txtsl.Text);
                         cmd.Parameters.AddWithValue("@sMoTa", txtmota.Text);
                         cmd.Parameters.AddWithValue("@sNhaCungCap", txtncc.Text);
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-                        dtngaytao.CustomFormat = "dd/MM/yyyy"; 
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
+                        cmd.Parameters.AddWithValue("@sHinhAnh", x.Text);
+                        cmd.Parameters.AddWithValue("@sKichThuoc", txtkichthuoc.Text);
                         int kq = (int)cmd.ExecuteNonQuery();
                         if (kq > 0)
                         {
@@ -346,14 +327,17 @@ namespace QLChauCay
             }
         }
 
-        private void pchinhanh_Click(object sender, EventArgs e)
+        private void btnOpenPic_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
+            OpenFileDialog dlgOpen = new OpenFileDialog();
+            dlgOpen.Filter = "Bitmap(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg|GIF(*.gif)|*.gif|All files(*.*)|*.*";
+            dlgOpen.FilterIndex = 2;
+            dlgOpen.Title = "Chọn ảnh minh hoạ cho sản phẩm";
+            if (dlgOpen.ShowDialog() == DialogResult.OK)
+            {
+                txtpic.Image = Image.FromFile(dlgOpen.FileName);
+                txthinhanh.Text = dlgOpen.FileName;
+            }
         }
     }
 }

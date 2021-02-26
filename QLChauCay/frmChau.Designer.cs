@@ -33,9 +33,13 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtngaytao = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.txtpic = new System.Windows.Forms.PictureBox();
+            this.btnOpenPic = new System.Windows.Forms.Button();
+            this.txtmota = new System.Windows.Forms.RichTextBox();
+            this.txthinhanh = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtkichthuoc = new System.Windows.Forms.TextBox();
+            this.x = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtncc = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -46,7 +50,6 @@ namespace QLChauCay
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbloai = new System.Windows.Forms.ComboBox();
-            this.txtmota = new System.Windows.Forms.TextBox();
             this.txtsl = new System.Windows.Forms.TextBox();
             this.txtgia = new System.Windows.Forms.TextBox();
             this.txtmau = new System.Windows.Forms.TextBox();
@@ -58,8 +61,19 @@ namespace QLChauCay
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgdschau = new System.Windows.Forms.DataGridView();
+            this.idChau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLoaiChau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTenChau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sChatLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sMauSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fGiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblChauCayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLChauCayDataSet = new QLChauCay.QLChauCayDataSet();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -68,26 +82,12 @@ namespace QLChauCay
             this.btnsua = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
             this.btnthemmoi = new System.Windows.Forms.Button();
-            this.tbl_ChauCayTableAdapter = new QLChauCay.QLChauCayDataSetTableAdapters.tbl_ChauCayTableAdapter();
-            this.cbbstatus = new System.Windows.Forms.ComboBox();
-            this.idChauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLoaiChauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTenChauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sChatLieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sMauSacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fDonGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fGiaNhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSoLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sMoTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNhaCungCapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpic)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdschau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblChauCayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,10 +112,13 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbbstatus);
-            this.groupBox1.Controls.Add(this.dtngaytao);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtpic);
+            this.groupBox1.Controls.Add(this.btnOpenPic);
+            this.groupBox1.Controls.Add(this.txtmota);
+            this.groupBox1.Controls.Add(this.txthinhanh);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtkichthuoc);
+            this.groupBox1.Controls.Add(this.x);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtncc);
             this.groupBox1.Controls.Add(this.label11);
@@ -126,7 +129,6 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cbbloai);
-            this.groupBox1.Controls.Add(this.txtmota);
             this.groupBox1.Controls.Add(this.txtsl);
             this.groupBox1.Controls.Add(this.txtgia);
             this.groupBox1.Controls.Add(this.txtmau);
@@ -143,36 +145,74 @@ namespace QLChauCay
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin";
             // 
-            // dtngaytao
+            // txtpic
             // 
-            this.dtngaytao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtngaytao.Location = new System.Drawing.Point(101, 418);
-            this.dtngaytao.Name = "dtngaytao";
-            this.dtngaytao.Size = new System.Drawing.Size(173, 20);
-            this.dtngaytao.TabIndex = 28;
+            this.txtpic.BackgroundImage = global::QLChauCay.Properties.Resources.nelogin;
+            this.txtpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtpic.Location = new System.Drawing.Point(101, 420);
+            this.txtpic.Name = "txtpic";
+            this.txtpic.Size = new System.Drawing.Size(165, 114);
+            this.txtpic.TabIndex = 35;
+            this.txtpic.TabStop = false;
             // 
-            // label14
+            // btnOpenPic
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 417);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Mô Tả";
+            this.btnOpenPic.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnOpenPic.Location = new System.Drawing.Point(232, 391);
+            this.btnOpenPic.Name = "btnOpenPic";
+            this.btnOpenPic.Size = new System.Drawing.Size(33, 23);
+            this.btnOpenPic.TabIndex = 34;
+            this.btnOpenPic.Text = "Mở";
+            this.btnOpenPic.UseVisualStyleBackColor = false;
+            this.btnOpenPic.Click += new System.EventHandler(this.btnOpenPic_Click);
             // 
-            // label13
+            // txtmota
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 383);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 13);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Trạng Thái";
+            this.txtmota.Location = new System.Drawing.Point(101, 289);
+            this.txtmota.Name = "txtmota";
+            this.txtmota.Size = new System.Drawing.Size(164, 96);
+            this.txtmota.TabIndex = 33;
+            this.txtmota.Text = "";
+            // 
+            // txthinhanh
+            // 
+            this.txthinhanh.Location = new System.Drawing.Point(101, 393);
+            this.txthinhanh.Multiline = true;
+            this.txthinhanh.Name = "txthinhanh";
+            this.txthinhanh.Size = new System.Drawing.Size(134, 20);
+            this.txthinhanh.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 162);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Kích Thước";
+            // 
+            // txtkichthuoc
+            // 
+            this.txtkichthuoc.Location = new System.Drawing.Point(101, 159);
+            this.txtkichthuoc.Multiline = true;
+            this.txtkichthuoc.Name = "txtkichthuoc";
+            this.txtkichthuoc.Size = new System.Drawing.Size(164, 20);
+            this.txtkichthuoc.TabIndex = 30;
+            // 
+            // x
+            // 
+            this.x.AutoSize = true;
+            this.x.Location = new System.Drawing.Point(7, 400);
+            this.x.Name = "x";
+            this.x.Size = new System.Drawing.Size(51, 13);
+            this.x.TabIndex = 23;
+            this.x.Text = "Hình Ảnh";
+            this.x.UseMnemonic = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 348);
+            this.label12.Location = new System.Drawing.Point(5, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 21;
@@ -180,7 +220,7 @@ namespace QLChauCay
             // 
             // txtncc
             // 
-            this.txtncc.Location = new System.Drawing.Point(102, 345);
+            this.txtncc.Location = new System.Drawing.Point(101, 263);
             this.txtncc.Multiline = true;
             this.txtncc.Name = "txtncc";
             this.txtncc.Size = new System.Drawing.Size(164, 20);
@@ -189,7 +229,7 @@ namespace QLChauCay
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 239);
+            this.label11.Location = new System.Drawing.Point(7, 214);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 13);
             this.label11.TabIndex = 19;
@@ -197,7 +237,7 @@ namespace QLChauCay
             // 
             // txtgianhap
             // 
-            this.txtgianhap.Location = new System.Drawing.Point(102, 236);
+            this.txtgianhap.Location = new System.Drawing.Point(102, 211);
             this.txtgianhap.Multiline = true;
             this.txtgianhap.Name = "txtgianhap";
             this.txtgianhap.Size = new System.Drawing.Size(164, 20);
@@ -206,7 +246,7 @@ namespace QLChauCay
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 310);
+            this.label9.Location = new System.Drawing.Point(5, 292);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 15;
@@ -215,7 +255,7 @@ namespace QLChauCay
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 275);
+            this.label8.Location = new System.Drawing.Point(6, 240);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 14;
@@ -224,7 +264,7 @@ namespace QLChauCay
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 204);
+            this.label7.Location = new System.Drawing.Point(6, 188);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 13;
@@ -233,7 +273,7 @@ namespace QLChauCay
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 167);
+            this.label6.Location = new System.Drawing.Point(6, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 12;
@@ -242,7 +282,7 @@ namespace QLChauCay
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 132);
+            this.label5.Location = new System.Drawing.Point(7, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 11;
@@ -251,22 +291,14 @@ namespace QLChauCay
             // cbbloai
             // 
             this.cbbloai.FormattingEnabled = true;
-            this.cbbloai.Location = new System.Drawing.Point(102, 63);
+            this.cbbloai.Location = new System.Drawing.Point(101, 54);
             this.cbbloai.Name = "cbbloai";
             this.cbbloai.Size = new System.Drawing.Size(164, 21);
             this.cbbloai.TabIndex = 2;
             // 
-            // txtmota
-            // 
-            this.txtmota.Location = new System.Drawing.Point(102, 307);
-            this.txtmota.Multiline = true;
-            this.txtmota.Name = "txtmota";
-            this.txtmota.Size = new System.Drawing.Size(164, 20);
-            this.txtmota.TabIndex = 10;
-            // 
             // txtsl
             // 
-            this.txtsl.Location = new System.Drawing.Point(102, 272);
+            this.txtsl.Location = new System.Drawing.Point(102, 237);
             this.txtsl.Multiline = true;
             this.txtsl.Name = "txtsl";
             this.txtsl.Size = new System.Drawing.Size(164, 20);
@@ -274,7 +306,7 @@ namespace QLChauCay
             // 
             // txtgia
             // 
-            this.txtgia.Location = new System.Drawing.Point(102, 201);
+            this.txtgia.Location = new System.Drawing.Point(101, 185);
             this.txtgia.Multiline = true;
             this.txtgia.Name = "txtgia";
             this.txtgia.Size = new System.Drawing.Size(164, 20);
@@ -282,7 +314,7 @@ namespace QLChauCay
             // 
             // txtmau
             // 
-            this.txtmau.Location = new System.Drawing.Point(102, 164);
+            this.txtmau.Location = new System.Drawing.Point(101, 133);
             this.txtmau.Multiline = true;
             this.txtmau.Name = "txtmau";
             this.txtmau.Size = new System.Drawing.Size(164, 20);
@@ -290,7 +322,7 @@ namespace QLChauCay
             // 
             // txtchatlieu
             // 
-            this.txtchatlieu.Location = new System.Drawing.Point(102, 129);
+            this.txtchatlieu.Location = new System.Drawing.Point(102, 107);
             this.txtchatlieu.Multiline = true;
             this.txtchatlieu.Name = "txtchatlieu";
             this.txtchatlieu.Size = new System.Drawing.Size(164, 20);
@@ -298,7 +330,7 @@ namespace QLChauCay
             // 
             // txtten
             // 
-            this.txtten.Location = new System.Drawing.Point(102, 98);
+            this.txtten.Location = new System.Drawing.Point(102, 81);
             this.txtten.Multiline = true;
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(164, 20);
@@ -307,7 +339,7 @@ namespace QLChauCay
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 101);
+            this.label4.Location = new System.Drawing.Point(6, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 4;
@@ -316,7 +348,7 @@ namespace QLChauCay
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 66);
+            this.label3.Location = new System.Drawing.Point(5, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 2;
@@ -356,18 +388,18 @@ namespace QLChauCay
             this.dgdschau.AutoGenerateColumns = false;
             this.dgdschau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgdschau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idChauDataGridViewTextBoxColumn,
-            this.idLoaiChauDataGridViewTextBoxColumn,
-            this.sTenChauDataGridViewTextBoxColumn,
-            this.sChatLieuDataGridViewTextBoxColumn,
-            this.sMauSacDataGridViewTextBoxColumn,
-            this.fDonGiaDataGridViewTextBoxColumn,
-            this.fGiaNhapDataGridViewTextBoxColumn,
-            this.sSoLuongDataGridViewTextBoxColumn,
-            this.sMoTaDataGridViewTextBoxColumn,
-            this.sNhaCungCapDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn,
-            this.createdateDataGridViewTextBoxColumn});
+            this.idChau,
+            this.idLoaiChau,
+            this.sTenChau,
+            this.sChatLieu,
+            this.sMauSac,
+            this.sKichThuoc,
+            this.fDonGia,
+            this.fGiaNhap,
+            this.sSoLuong,
+            this.sMoTa,
+            this.sNhaCungCap,
+            this.sHinhAnh});
             this.dgdschau.DataSource = this.tblChauCayBindingSource;
             this.dgdschau.Location = new System.Drawing.Point(20, 59);
             this.dgdschau.Name = "dgdschau";
@@ -375,15 +407,80 @@ namespace QLChauCay
             this.dgdschau.TabIndex = 2;
             this.dgdschau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgdschau_CellContentClick);
             // 
+            // idChau
+            // 
+            this.idChau.DataPropertyName = "idChau";
+            this.idChau.HeaderText = "Mã Chậu";
+            this.idChau.Name = "idChau";
+            // 
+            // idLoaiChau
+            // 
+            this.idLoaiChau.DataPropertyName = "sTenLoai";
+            this.idLoaiChau.HeaderText = "Loại Chậu";
+            this.idLoaiChau.Name = "idLoaiChau";
+            // 
+            // sTenChau
+            // 
+            this.sTenChau.DataPropertyName = "sTenChau";
+            this.sTenChau.HeaderText = "Tên Chậu";
+            this.sTenChau.Name = "sTenChau";
+            // 
+            // sChatLieu
+            // 
+            this.sChatLieu.HeaderText = "Chất Liệu";
+            this.sChatLieu.Name = "sChatLieu";
+            // 
+            // sMauSac
+            // 
+            this.sMauSac.DataPropertyName = "sMauSac";
+            this.sMauSac.HeaderText = "Màu Sắc";
+            this.sMauSac.Name = "sMauSac";
+            // 
+            // sKichThuoc
+            // 
+            this.sKichThuoc.DataPropertyName = "sKichThuoc";
+            this.sKichThuoc.HeaderText = "Kích Thước";
+            this.sKichThuoc.Name = "sKichThuoc";
+            // 
+            // fDonGia
+            // 
+            this.fDonGia.DataPropertyName = "fDonGia";
+            this.fDonGia.HeaderText = "Đơn Giá";
+            this.fDonGia.Name = "fDonGia";
+            // 
+            // fGiaNhap
+            // 
+            this.fGiaNhap.DataPropertyName = "fGiaNhap";
+            this.fGiaNhap.HeaderText = "Giá Nhập";
+            this.fGiaNhap.Name = "fGiaNhap";
+            // 
+            // sSoLuong
+            // 
+            this.sSoLuong.DataPropertyName = "sSoLuong";
+            this.sSoLuong.HeaderText = "Số Lượng";
+            this.sSoLuong.Name = "sSoLuong";
+            // 
+            // sMoTa
+            // 
+            this.sMoTa.DataPropertyName = "sMoTa";
+            this.sMoTa.HeaderText = "Mô Tả";
+            this.sMoTa.Name = "sMoTa";
+            // 
+            // sNhaCungCap
+            // 
+            this.sNhaCungCap.DataPropertyName = "sNhaCungCap";
+            this.sNhaCungCap.HeaderText = "Nhà Cung Cấp";
+            this.sNhaCungCap.Name = "sNhaCungCap";
+            // 
+            // sHinhAnh
+            // 
+            this.sHinhAnh.DataPropertyName = "sHinhAnh";
+            this.sHinhAnh.HeaderText = "Hình Ảnh";
+            this.sHinhAnh.Name = "sHinhAnh";
+            // 
             // tblChauCayBindingSource
             // 
             this.tblChauCayBindingSource.DataMember = "tbl_ChauCay";
-            this.tblChauCayBindingSource.DataSource = this.qLChauCayDataSet;
-            // 
-            // qLChauCayDataSet
-            // 
-            this.qLChauCayDataSet.DataSetName = "QLChauCayDataSet";
-            this.qLChauCayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btntimkiem
             // 
@@ -468,95 +565,6 @@ namespace QLChauCay
             this.btnthemmoi.UseVisualStyleBackColor = true;
             this.btnthemmoi.Click += new System.EventHandler(this.btnthemmoi_Click);
             // 
-            // tbl_ChauCayTableAdapter
-            // 
-            this.tbl_ChauCayTableAdapter.ClearBeforeFill = true;
-            // 
-            // cbbstatus
-            // 
-            this.cbbstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbbstatus.FormattingEnabled = true;
-            this.cbbstatus.Items.AddRange(new object[] {
-            "Hoạt Động",
-            "Khóa"});
-            this.cbbstatus.Location = new System.Drawing.Point(101, 380);
-            this.cbbstatus.Name = "cbbstatus";
-            this.cbbstatus.Size = new System.Drawing.Size(164, 21);
-            this.cbbstatus.TabIndex = 29;
-            // 
-            // idChauDataGridViewTextBoxColumn
-            // 
-            this.idChauDataGridViewTextBoxColumn.DataPropertyName = "idChau";
-            this.idChauDataGridViewTextBoxColumn.HeaderText = "Mã Chậu";
-            this.idChauDataGridViewTextBoxColumn.Name = "idChauDataGridViewTextBoxColumn";
-            this.idChauDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idLoaiChauDataGridViewTextBoxColumn
-            // 
-            this.idLoaiChauDataGridViewTextBoxColumn.DataPropertyName = "idLoaiChau";
-            this.idLoaiChauDataGridViewTextBoxColumn.HeaderText = "Loại Chậu";
-            this.idLoaiChauDataGridViewTextBoxColumn.Name = "idLoaiChauDataGridViewTextBoxColumn";
-            // 
-            // sTenChauDataGridViewTextBoxColumn
-            // 
-            this.sTenChauDataGridViewTextBoxColumn.DataPropertyName = "sTenChau";
-            this.sTenChauDataGridViewTextBoxColumn.HeaderText = "Tên Chậu";
-            this.sTenChauDataGridViewTextBoxColumn.Name = "sTenChauDataGridViewTextBoxColumn";
-            // 
-            // sChatLieuDataGridViewTextBoxColumn
-            // 
-            this.sChatLieuDataGridViewTextBoxColumn.DataPropertyName = "sChatLieu";
-            this.sChatLieuDataGridViewTextBoxColumn.HeaderText = "Chậu Cây";
-            this.sChatLieuDataGridViewTextBoxColumn.Name = "sChatLieuDataGridViewTextBoxColumn";
-            // 
-            // sMauSacDataGridViewTextBoxColumn
-            // 
-            this.sMauSacDataGridViewTextBoxColumn.DataPropertyName = "sMauSac";
-            this.sMauSacDataGridViewTextBoxColumn.HeaderText = "Màu Sắc";
-            this.sMauSacDataGridViewTextBoxColumn.Name = "sMauSacDataGridViewTextBoxColumn";
-            // 
-            // fDonGiaDataGridViewTextBoxColumn
-            // 
-            this.fDonGiaDataGridViewTextBoxColumn.DataPropertyName = "fDonGia";
-            this.fDonGiaDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
-            this.fDonGiaDataGridViewTextBoxColumn.Name = "fDonGiaDataGridViewTextBoxColumn";
-            // 
-            // fGiaNhapDataGridViewTextBoxColumn
-            // 
-            this.fGiaNhapDataGridViewTextBoxColumn.DataPropertyName = "fGiaNhap";
-            this.fGiaNhapDataGridViewTextBoxColumn.HeaderText = "Giá Nhập";
-            this.fGiaNhapDataGridViewTextBoxColumn.Name = "fGiaNhapDataGridViewTextBoxColumn";
-            // 
-            // sSoLuongDataGridViewTextBoxColumn
-            // 
-            this.sSoLuongDataGridViewTextBoxColumn.DataPropertyName = "sSoLuong";
-            this.sSoLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
-            this.sSoLuongDataGridViewTextBoxColumn.Name = "sSoLuongDataGridViewTextBoxColumn";
-            // 
-            // sMoTaDataGridViewTextBoxColumn
-            // 
-            this.sMoTaDataGridViewTextBoxColumn.DataPropertyName = "sMoTa";
-            this.sMoTaDataGridViewTextBoxColumn.HeaderText = "Mô Tả";
-            this.sMoTaDataGridViewTextBoxColumn.Name = "sMoTaDataGridViewTextBoxColumn";
-            // 
-            // sNhaCungCapDataGridViewTextBoxColumn
-            // 
-            this.sNhaCungCapDataGridViewTextBoxColumn.DataPropertyName = "sNhaCungCap";
-            this.sNhaCungCapDataGridViewTextBoxColumn.HeaderText = "NCC";
-            this.sNhaCungCapDataGridViewTextBoxColumn.Name = "sNhaCungCapDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "Trạng Thái";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            // 
-            // createdateDataGridViewTextBoxColumn
-            // 
-            this.createdateDataGridViewTextBoxColumn.DataPropertyName = "Createdate";
-            this.createdateDataGridViewTextBoxColumn.HeaderText = "Ngày Tạo";
-            this.createdateDataGridViewTextBoxColumn.Name = "createdateDataGridViewTextBoxColumn";
-            // 
             // frmChau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,11 +581,11 @@ namespace QLChauCay
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpic)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgdschau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblChauCayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -591,7 +599,6 @@ namespace QLChauCay
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtma;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtmota;
         private System.Windows.Forms.TextBox txtsl;
         private System.Windows.Forms.TextBox txtgia;
         private System.Windows.Forms.TextBox txtmau;
@@ -618,13 +625,8 @@ namespace QLChauCay
         private System.Windows.Forms.TextBox txtgianhap;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtncc;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dtngaytao;
-        private QLChauCayDataSet qLChauCayDataSet;
+        private System.Windows.Forms.Label x;
         private System.Windows.Forms.BindingSource tblChauCayBindingSource;
-        private QLChauCayDataSetTableAdapters.tbl_ChauCayTableAdapter tbl_ChauCayTableAdapter;
-        private System.Windows.Forms.ComboBox cbbstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn idChauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLoaiChauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTenChauDataGridViewTextBoxColumn;
@@ -637,5 +639,23 @@ namespace QLChauCay
         private System.Windows.Forms.DataGridViewTextBoxColumn sNhaCungCapDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtkichthuoc;
+        private System.Windows.Forms.TextBox txthinhanh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idChau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLoaiChau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTenChau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sChatLieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sMauSac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sKichThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fDonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fGiaNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sMoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNhaCungCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sHinhAnh;
+        private System.Windows.Forms.PictureBox txtpic;
+        private System.Windows.Forms.Button btnOpenPic;
+        private System.Windows.Forms.RichTextBox txtmota;
     }
 }

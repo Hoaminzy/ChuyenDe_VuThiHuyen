@@ -27,7 +27,6 @@ namespace QLChauCay
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLChauCayDataSet.tbl_KhachHang' table. You can move, or remove it, as needed.
-            //this.tbl_KhachHangTableAdapter.Fill(this.qLChauCayDataSet.tbl_KhachHang);
             drdskhachhang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             using (conn = new SqlConnection(ConnectionString.connectionString))
             {
@@ -58,9 +57,7 @@ namespace QLChauCay
             txtcmnd.Enabled = false;
             rdnam.Enabled = false;
             rdnu.Enabled = false;
-            cbbstatus.Enabled = false;
             dtngaysinh.Enabled = false;
-            dtngaytao.Enabled = false;
             txtsdt.Enabled = false;
             txtdiachi.Enabled = false;
         }
@@ -72,9 +69,7 @@ namespace QLChauCay
             txtcmnd.Enabled = true;
             rdnam.Enabled = true;
             rdnu.Enabled = true;
-            cbbstatus.Enabled = true;
             dtngaysinh.Enabled = true;
-            dtngaytao.Enabled = true;
             txtsdt.Enabled = true;
             txtdiachi.Enabled = true;
         }
@@ -86,7 +81,6 @@ namespace QLChauCay
             txtcmnd.ResetText();
             txtsdt.Clear();
             dtngaysinh.Text = DateTime.Now.ToString();
-            dtngaytao.Text = DateTime.Now.ToString();
         }
 
         private void drdskhachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,16 +97,7 @@ namespace QLChauCay
             else rdnu.Checked = true;
             txtsdt.Text = drdskhachhang.Rows[i].Cells[5].Value.ToString();
             dtngaysinh.Text = drdskhachhang.Rows[i].Cells[6].Value.ToString();
-            if (drdskhachhang.Rows[i].Cells[7].Value.ToString() == "1")
-            {
-                cbbstatus.Text = "Hoạt Động";
-
-            }
-            else
-            {
-                cbbstatus.Text = "Khóa";
-            }
-            dtngaytao.Text = drdskhachhang.Rows[i].Cells[8].Value.ToString();
+           
    
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
@@ -150,8 +135,10 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-                  string query = "update tbl_KhachHang set Status=0 where idKhachHang= '" + txtma.Text + "' ";
-                //string query = "Delete_KhachHang";
+              //  string query = "delete * from tbl_KhachHang where'" + txtma.Text + "'";
+                string query = "Delete_KhachHang";
+
+                cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdskhachhang.DataSource;
@@ -202,13 +189,7 @@ namespace QLChauCay
                             cmd.Parameters.AddWithValue("@sSDT", txtsdt.Text);
                         dtngaysinh.CustomFormat = "dd/MM/yyyy";
                         cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-                        dtngaytao.CustomFormat = "dd/MM/yyyy";
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
+                      
                             int kq = (int)cmd.ExecuteNonQuery();
                             if (kq > 0)
                             {
@@ -278,14 +259,6 @@ namespace QLChauCay
 
                         cmd.Parameters.AddWithValue("@sSDT", txtsdt.Text);
                             cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
-                        string tt;
-                        if (cbbstatus.Text == "Hoạt Động")
-                        {
-                            cmd.Parameters.AddWithValue("@Status", "1");
-                        }
-                        else cmd.Parameters.AddWithValue("@Status", "0");
-                        
-                        cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Value);
                             int kq = (int)cmd.ExecuteNonQuery();
                             if (kq > 0)
                             {

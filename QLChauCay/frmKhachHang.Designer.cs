@@ -31,17 +31,7 @@ namespace QLChauCay
         {
             this.components = new System.ComponentModel.Container();
             this.drdskhachhang = new System.Windows.Forms.DataGridView();
-            this.idKhachHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDiaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCMNDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sGioiTinhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.sSDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNgaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLChauCayDataSet = new QLChauCay.QLChauCayDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btndong = new System.Windows.Forms.Button();
             this.btntimkiem = new System.Windows.Forms.Button();
@@ -51,13 +41,9 @@ namespace QLChauCay
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthemmoi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.rdnu = new System.Windows.Forms.RadioButton();
             this.rdnam = new System.Windows.Forms.RadioButton();
             this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.dtngaytao = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtsdt = new System.Windows.Forms.TextBox();
@@ -71,14 +57,17 @@ namespace QLChauCay
             this.label2 = new System.Windows.Forms.Label();
             this.txtma = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbl_KhachHangTableAdapter = new QLChauCay.QLChauCayDataSetTableAdapters.tbl_KhachHangTableAdapter();
-            this.cbbstatus = new System.Windows.Forms.ComboBox();
+            this.idKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.drdskhachhang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKhachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // drdskhachhang
@@ -86,15 +75,13 @@ namespace QLChauCay
             this.drdskhachhang.AutoGenerateColumns = false;
             this.drdskhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drdskhachhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idKhachHangDataGridViewTextBoxColumn,
-            this.sTenKHDataGridViewTextBoxColumn,
-            this.sDiaChiDataGridViewTextBoxColumn,
-            this.sCMNDDataGridViewTextBoxColumn,
-            this.sGioiTinhDataGridViewCheckBoxColumn,
-            this.sSDTDataGridViewTextBoxColumn,
-            this.sNgaySinhDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn,
-            this.createdateDataGridViewTextBoxColumn});
+            this.idKhachHang,
+            this.sTenKH,
+            this.sDiaChi,
+            this.sCMND,
+            this.sGioiTinh,
+            this.sSDT,
+            this.sNgaySinh});
             this.drdskhachhang.DataSource = this.tblKhachHangBindingSource;
             this.drdskhachhang.Location = new System.Drawing.Point(47, 308);
             this.drdskhachhang.Name = "drdskhachhang";
@@ -102,76 +89,9 @@ namespace QLChauCay
             this.drdskhachhang.TabIndex = 9;
             this.drdskhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drdskhachhang_CellContentClick);
             // 
-            // idKhachHangDataGridViewTextBoxColumn
-            // 
-            this.idKhachHangDataGridViewTextBoxColumn.DataPropertyName = "idKhachHang";
-            this.idKhachHangDataGridViewTextBoxColumn.HeaderText = "Mã Khách Hàng";
-            this.idKhachHangDataGridViewTextBoxColumn.Name = "idKhachHangDataGridViewTextBoxColumn";
-            this.idKhachHangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sTenKHDataGridViewTextBoxColumn
-            // 
-            this.sTenKHDataGridViewTextBoxColumn.DataPropertyName = "sTenKH";
-            this.sTenKHDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
-            this.sTenKHDataGridViewTextBoxColumn.Name = "sTenKHDataGridViewTextBoxColumn";
-            this.sTenKHDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sDiaChiDataGridViewTextBoxColumn
-            // 
-            this.sDiaChiDataGridViewTextBoxColumn.DataPropertyName = "sDiaChi";
-            this.sDiaChiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
-            this.sDiaChiDataGridViewTextBoxColumn.Name = "sDiaChiDataGridViewTextBoxColumn";
-            this.sDiaChiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sCMNDDataGridViewTextBoxColumn
-            // 
-            this.sCMNDDataGridViewTextBoxColumn.DataPropertyName = "sCMND";
-            this.sCMNDDataGridViewTextBoxColumn.HeaderText = "CMND";
-            this.sCMNDDataGridViewTextBoxColumn.Name = "sCMNDDataGridViewTextBoxColumn";
-            this.sCMNDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sGioiTinhDataGridViewCheckBoxColumn
-            // 
-            this.sGioiTinhDataGridViewCheckBoxColumn.DataPropertyName = "sGioiTinh";
-            this.sGioiTinhDataGridViewCheckBoxColumn.HeaderText = "Giới Tính";
-            this.sGioiTinhDataGridViewCheckBoxColumn.Name = "sGioiTinhDataGridViewCheckBoxColumn";
-            this.sGioiTinhDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // sSDTDataGridViewTextBoxColumn
-            // 
-            this.sSDTDataGridViewTextBoxColumn.DataPropertyName = "sSDT";
-            this.sSDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sSDTDataGridViewTextBoxColumn.Name = "sSDTDataGridViewTextBoxColumn";
-            this.sSDTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sNgaySinhDataGridViewTextBoxColumn
-            // 
-            this.sNgaySinhDataGridViewTextBoxColumn.DataPropertyName = "sNgaySinh";
-            this.sNgaySinhDataGridViewTextBoxColumn.HeaderText = "Ngày Sinh";
-            this.sNgaySinhDataGridViewTextBoxColumn.Name = "sNgaySinhDataGridViewTextBoxColumn";
-            this.sNgaySinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "Trạng Thái";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            // 
-            // createdateDataGridViewTextBoxColumn
-            // 
-            this.createdateDataGridViewTextBoxColumn.DataPropertyName = "Createdate";
-            this.createdateDataGridViewTextBoxColumn.HeaderText = "Ngày Tạo";
-            this.createdateDataGridViewTextBoxColumn.Name = "createdateDataGridViewTextBoxColumn";
-            // 
             // tblKhachHangBindingSource
             // 
             this.tblKhachHangBindingSource.DataMember = "tbl_KhachHang";
-            this.tblKhachHangBindingSource.DataSource = this.qLChauCayDataSet;
-            // 
-            // qLChauCayDataSet
-            // 
-            this.qLChauCayDataSet.DataSetName = "QLChauCayDataSet";
-            this.qLChauCayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -262,12 +182,9 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.rdnu);
             this.groupBox1.Controls.Add(this.rdnam);
             this.groupBox1.Controls.Add(this.txtdiachi);
-            this.groupBox1.Controls.Add(this.dtngaytao);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtsdt);
@@ -285,80 +202,42 @@ namespace QLChauCay
             this.groupBox1.Size = new System.Drawing.Size(548, 228);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.cbbstatus);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(254, 97);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 44);
-            this.panel1.TabIndex = 7;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Trạng Thái";
+            this.groupBox1.Text = "Thông tin chung";
             // 
             // rdnu
             // 
             this.rdnu.AutoSize = true;
+            this.rdnu.Checked = true;
             this.rdnu.Location = new System.Drawing.Point(175, 112);
             this.rdnu.Name = "rdnu";
             this.rdnu.Size = new System.Drawing.Size(39, 17);
             this.rdnu.TabIndex = 34;
+            this.rdnu.TabStop = true;
             this.rdnu.Text = "Nữ";
             this.rdnu.UseVisualStyleBackColor = true;
             // 
             // rdnam
             // 
             this.rdnam.AutoSize = true;
-            this.rdnam.Checked = true;
             this.rdnam.Location = new System.Drawing.Point(97, 111);
             this.rdnam.Name = "rdnam";
             this.rdnam.Size = new System.Drawing.Size(47, 17);
             this.rdnam.TabIndex = 33;
-            this.rdnam.TabStop = true;
             this.rdnam.Text = "Nam";
             this.rdnam.UseVisualStyleBackColor = true;
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(95, 182);
+            this.txtdiachi.Location = new System.Drawing.Point(334, 112);
             this.txtdiachi.Multiline = true;
             this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(142, 20);
+            this.txtdiachi.Size = new System.Drawing.Size(153, 20);
             this.txtdiachi.TabIndex = 32;
-            // 
-            // dtngaytao
-            // 
-            this.dtngaytao.CustomFormat = "dd/MM/yyyy";
-            this.dtngaytao.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtngaytao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtngaytao.Location = new System.Drawing.Point(334, 157);
-            this.dtngaytao.Name = "dtngaytao";
-            this.dtngaytao.Size = new System.Drawing.Size(153, 20);
-            this.dtngaytao.TabIndex = 30;
-            this.dtngaytao.Value = new System.DateTime(2021, 2, 9, 22, 33, 26, 0);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(262, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Ngày Tạo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 185);
+            this.label3.Location = new System.Drawing.Point(256, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 12;
@@ -469,21 +348,47 @@ namespace QLChauCay
             this.label1.TabIndex = 6;
             this.label1.Text = "DANH SÁCH KHÁCH HÀNG";
             // 
-            // tbl_KhachHangTableAdapter
+            // idKhachHang
             // 
-            this.tbl_KhachHangTableAdapter.ClearBeforeFill = true;
+            this.idKhachHang.DataPropertyName = "idKhachHang";
+            this.idKhachHang.HeaderText = "Mã Khách Hàng";
+            this.idKhachHang.Name = "idKhachHang";
             // 
-            // cbbstatus
+            // sTenKH
             // 
-            this.cbbstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbbstatus.FormattingEnabled = true;
-            this.cbbstatus.Items.AddRange(new object[] {
-            "Hoạt Động ",
-            "Khóa"});
-            this.cbbstatus.Location = new System.Drawing.Point(80, 14);
-            this.cbbstatus.Name = "cbbstatus";
-            this.cbbstatus.Size = new System.Drawing.Size(153, 21);
-            this.cbbstatus.TabIndex = 38;
+            this.sTenKH.DataPropertyName = "sTenKH";
+            this.sTenKH.HeaderText = "Tên Khách Hàng";
+            this.sTenKH.Name = "sTenKH";
+            // 
+            // sDiaChi
+            // 
+            this.sDiaChi.DataPropertyName = "sDiaChi";
+            this.sDiaChi.HeaderText = "Địa Chỉ";
+            this.sDiaChi.Name = "sDiaChi";
+            // 
+            // sCMND
+            // 
+            this.sCMND.DataPropertyName = "sCMND";
+            this.sCMND.HeaderText = "CMND";
+            this.sCMND.Name = "sCMND";
+            // 
+            // sGioiTinh
+            // 
+            this.sGioiTinh.DataPropertyName = "sGioiTinh";
+            this.sGioiTinh.HeaderText = "Giới Tính";
+            this.sGioiTinh.Name = "sGioiTinh";
+            // 
+            // sSDT
+            // 
+            this.sSDT.DataPropertyName = "sSDT";
+            this.sSDT.HeaderText = "SĐT";
+            this.sSDT.Name = "sSDT";
+            // 
+            // sNgaySinh
+            // 
+            this.sNgaySinh.DataPropertyName = "sNgaySinh";
+            this.sNgaySinh.HeaderText = "Ngày Sinh";
+            this.sNgaySinh.Name = "sNgaySinh";
             // 
             // frmKhachHang
             // 
@@ -499,13 +404,10 @@ namespace QLChauCay
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drdskhachhang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKhachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLChauCayDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,26 +437,26 @@ namespace QLChauCay
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtma;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtngaytao;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtdiachi;
         private System.Windows.Forms.RadioButton rdnam;
         private System.Windows.Forms.RadioButton rdnu;
-        private QLChauCayDataSet qLChauCayDataSet;
         private System.Windows.Forms.BindingSource tblKhachHangBindingSource;
-        private QLChauCayDataSetTableAdapters.tbl_KhachHangTableAdapter tbl_KhachHangTableAdapter;
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.DataGridViewTextBoxColumn idKhachHangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTenKHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDiaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sCMNDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn sGioiTinhDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sGioiTinhDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sSDTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNgaySinhDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbbstatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNgaySinh;
     }
 }

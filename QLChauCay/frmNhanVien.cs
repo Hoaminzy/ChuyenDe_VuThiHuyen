@@ -58,8 +58,6 @@ namespace QLChauCay
             rdnu.Enabled = false;
             txtsdt.Enabled = false;
             dtngaysinh.Enabled = false;
-            cbbstatus.Enabled = false;
-            dtngaytao.Enabled = false;
         }
 
         void UnclockText()
@@ -74,8 +72,6 @@ namespace QLChauCay
             rdnu.Enabled = true;
             txtsdt.Enabled = true;
             dtngaysinh.Enabled = true;
-            cbbstatus.Enabled = true;
-            dtngaytao.Enabled = true;
         }
         void reset()
         {
@@ -85,7 +81,6 @@ namespace QLChauCay
             txtcmnd.ResetText();
             txtsdt.Clear();
             dtngaysinh.Text = DateTime.Now.ToString();
-            dtngaytao.Text = DateTime.Now.ToString();
         }
         private void load()
         {
@@ -134,16 +129,7 @@ namespace QLChauCay
             else rdnu.Checked = true;
             txtsdt.Text = drdsnhanvien.Rows[i].Cells[6].Value.ToString();
             dtngaysinh.Text = drdsnhanvien.Rows[i].Cells[7].Value.ToString();
-            if (drdsnhanvien.Rows[i].Cells[8].Value.ToString() == "1")
-            {
-                cbbstatus.Text = "Hoạt Động";
-
-            }
-            else
-            {
-                cbbstatus.Text = "Khóa";
-            }
-            dtngaytao.Text = drdsnhanvien.Rows[i].Cells[9].Value.ToString();
+          
 
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
@@ -196,13 +182,7 @@ namespace QLChauCay
                                 cmd.Parameters.AddWithValue("@Username", txttaikhoan.Text);
                                 cmd.Parameters.AddWithValue("@Password", txtmatkhau.Text);
 
-                                if (cbbstatus.Text == "Hoạt Động")
-                                {
-                                    cmd.Parameters.AddWithValue("@Status", "1");
-                                }
-                                else cmd.Parameters.AddWithValue("@Status", "0");
-                                dtngaytao.CustomFormat = "dd/MM/yyyy";
-                                cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
+                               
                                 int kq = (int)cmd.ExecuteNonQuery();
                                 if (kq > 0)
                                 {
@@ -277,13 +257,7 @@ namespace QLChauCay
                                 cmd.Parameters.AddWithValue("@Username", txttaikhoan.Text);
                                 cmd.Parameters.AddWithValue("@Password", txtmatkhau.Text);
 
-                                if (cbbstatus.Text == "Hoạt Động")
-                                {
-                                    cmd.Parameters.AddWithValue("@Status", "1");
-                                }
-                                else cmd.Parameters.AddWithValue("@Status", "0");
-                                dtngaytao.CustomFormat = "dd/MM/yyyy";
-                                cmd.Parameters.AddWithValue("@Createdate", dtngaytao.Text);
+                              
                                 int kq = (int)cmd.ExecuteNonQuery();
                                 if (kq > 0)
                                 {
@@ -328,8 +302,9 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-                string query = "update tbl_NhanVien set Status=0 where idNhanVien= '" + txtma.Text + "' ";
-                //string query = "Delete_KhachHang";
+             //   string query = "delete from tblNhanVien where idNhanVien= '" + txtma.Text + "' ";
+                string query = "Delete_KhachHang";
+                cmd.Parameters.AddWithValue("@idNhanVien", txtma.Text);
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdsnhanvien.DataSource;
