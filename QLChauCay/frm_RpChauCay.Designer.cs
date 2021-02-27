@@ -32,10 +32,10 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnlaydulieu = new System.Windows.Forms.Button();
             this.btndong = new System.Windows.Forms.Button();
+            this.btnlaydulieu = new System.Windows.Forms.Button();
+            this.txtloaichau = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.CRChau = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,38 +64,12 @@ namespace QLChauCay
             // 
             this.panel2.Controls.Add(this.btndong);
             this.panel2.Controls.Add(this.btnlaydulieu);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.txtloaichau);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(144, 71);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(760, 49);
             this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Loại Chậu: ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(257, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // btnlaydulieu
-            // 
-            this.btnlaydulieu.Location = new System.Drawing.Point(432, 12);
-            this.btnlaydulieu.Name = "btnlaydulieu";
-            this.btnlaydulieu.Size = new System.Drawing.Size(89, 23);
-            this.btnlaydulieu.TabIndex = 2;
-            this.btnlaydulieu.Text = "Lấy dữ liệu";
-            this.btnlaydulieu.UseVisualStyleBackColor = true;
             // 
             // btndong
             // 
@@ -106,6 +80,32 @@ namespace QLChauCay
             this.btndong.Text = "Đóng";
             this.btndong.UseVisualStyleBackColor = true;
             this.btndong.Click += new System.EventHandler(this.btndong_Click);
+            // 
+            // btnlaydulieu
+            // 
+            this.btnlaydulieu.Location = new System.Drawing.Point(432, 12);
+            this.btnlaydulieu.Name = "btnlaydulieu";
+            this.btnlaydulieu.Size = new System.Drawing.Size(89, 23);
+            this.btnlaydulieu.TabIndex = 2;
+            this.btnlaydulieu.Text = "Lấy dữ liệu";
+            this.btnlaydulieu.UseVisualStyleBackColor = true;
+            // 
+            // txtloaichau
+            // 
+            this.txtloaichau.FormattingEnabled = true;
+            this.txtloaichau.Location = new System.Drawing.Point(257, 14);
+            this.txtloaichau.Name = "txtloaichau";
+            this.txtloaichau.Size = new System.Drawing.Size(154, 21);
+            this.txtloaichau.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(190, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Loại Chậu: ";
             // 
             // CRChau
             // 
@@ -144,7 +144,7 @@ namespace QLChauCay
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.Button btnlaydulieu;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtloaichau;
         private System.Windows.Forms.Label label2;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer CRChau;
     }

@@ -35,6 +35,8 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbstatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtmakh = new System.Windows.Forms.TextBox();
@@ -42,7 +44,6 @@ namespace QLChauCay
             this.button1 = new System.Windows.Forms.Button();
             this.cbbkh = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.cbbnv = new System.Windows.Forms.ComboBox();
             this.dtngaylap = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,6 +78,7 @@ namespace QLChauCay
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
             this.tblHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbnv = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -107,6 +109,9 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbnv);
+            this.groupBox1.Controls.Add(this.cbbstatus);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtmakh);
@@ -114,7 +119,6 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbbkh);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.cbbnv);
             this.groupBox1.Controls.Add(this.dtngaylap);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -123,11 +127,32 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 194);
+            this.groupBox1.Size = new System.Drawing.Size(319, 220);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbbstatus
+            // 
+            this.cbbstatus.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbbstatus.FormattingEnabled = true;
+            this.cbbstatus.Items.AddRange(new object[] {
+            "1",
+            "0"});
+            this.cbbstatus.Location = new System.Drawing.Point(118, 181);
+            this.cbbstatus.Name = "cbbstatus";
+            this.cbbstatus.Size = new System.Drawing.Size(180, 21);
+            this.cbbstatus.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Trạng Thái";
             // 
             // label17
             // 
@@ -141,7 +166,7 @@ namespace QLChauCay
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 83);
+            this.label16.Location = new System.Drawing.Point(15, 78);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 13);
             this.label16.TabIndex = 20;
@@ -176,6 +201,7 @@ namespace QLChauCay
             // 
             // cbbkh
             // 
+            this.cbbkh.Enabled = false;
             this.cbbkh.FormattingEnabled = true;
             this.cbbkh.Location = new System.Drawing.Point(118, 154);
             this.cbbkh.Name = "cbbkh";
@@ -190,14 +216,6 @@ namespace QLChauCay
             this.label14.Size = new System.Drawing.Size(67, 13);
             this.label14.TabIndex = 10;
             this.label14.Text = "Khách Hàng";
-            // 
-            // cbbnv
-            // 
-            this.cbbnv.FormattingEnabled = true;
-            this.cbbnv.Location = new System.Drawing.Point(118, 101);
-            this.cbbnv.Name = "cbbnv";
-            this.cbbnv.Size = new System.Drawing.Size(180, 21);
-            this.cbbnv.TabIndex = 9;
             // 
             // dtngaylap
             // 
@@ -218,17 +236,17 @@ namespace QLChauCay
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 109);
+            this.label5.Location = new System.Drawing.Point(16, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Mã Nhân Viên";
+            this.label5.Text = "Tên Nhân Viên";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 56);
+            this.label3.Location = new System.Drawing.Point(16, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
@@ -365,7 +383,7 @@ namespace QLChauCay
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label7.Location = new System.Drawing.Point(359, 455);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 16);
+            this.label7.Size = new System.Drawing.Size(87, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Tổng Tiền: ";
             // 
@@ -386,7 +404,7 @@ namespace QLChauCay
             this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label13.Location = new System.Drawing.Point(359, 494);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 16);
+            this.label13.Size = new System.Drawing.Size(86, 16);
             this.label13.TabIndex = 5;
             this.label13.Text = "Bằng Chữ:  ";
             // 
@@ -536,6 +554,14 @@ namespace QLChauCay
             this.lbtongtien.TabIndex = 10;
             this.lbtongtien.Text = "label16";
             // 
+            // cbbnv
+            // 
+            this.cbbnv.Location = new System.Drawing.Point(118, 100);
+            this.cbbnv.Name = "cbbnv";
+            this.cbbnv.ReadOnly = true;
+            this.cbbnv.Size = new System.Drawing.Size(180, 20);
+            this.cbbnv.TabIndex = 19;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,7 +635,6 @@ namespace QLChauCay
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbbkh;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbbnv;
         private System.Windows.Forms.TextBox txttongtien;
         private System.Windows.Forms.Label lbtongtien;
         private System.Windows.Forms.Label label15;
@@ -620,5 +645,8 @@ namespace QLChauCay
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.BindingSource tblHoaDonBindingSource;
+        private System.Windows.Forms.ComboBox cbbstatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox cbbnv;
     }
 }

@@ -160,7 +160,7 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-                string query = "Delete_LoaiChau";
+                string query = "Delete from tbl_LoaiChau where idLoaiChau = '"+txtmaloai.Text+"'";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)dgdsloaichau.DataSource;

@@ -45,10 +45,10 @@ namespace QLChauCay
             this.btnthemmoi = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgdsloaichau = new System.Windows.Forms.DataGridView();
-            this.tblLoaiChauBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btndong = new System.Windows.Forms.Button();
             this.idLoaiChau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblLoaiChauBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btndong = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -150,7 +150,7 @@ namespace QLChauCay
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(161, 114);
+            this.btnxoa.Location = new System.Drawing.Point(161, 115);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(64, 60);
             this.btnxoa.TabIndex = 3;
@@ -212,6 +212,18 @@ namespace QLChauCay
             this.dgdsloaichau.TabIndex = 0;
             this.dgdsloaichau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgdsloaichau_CellContentClick);
             // 
+            // idLoaiChau
+            // 
+            this.idLoaiChau.DataPropertyName = "idLoaiChau";
+            this.idLoaiChau.HeaderText = "Mã Loại Chậu";
+            this.idLoaiChau.Name = "idLoaiChau";
+            // 
+            // sTenLoai
+            // 
+            this.sTenLoai.DataPropertyName = "sTenLoai";
+            this.sTenLoai.HeaderText = "Loại Chậu";
+            this.sTenLoai.Name = "sTenLoai";
+            // 
             // tblLoaiChauBindingSource
             // 
             this.tblLoaiChauBindingSource.DataMember = "tbl_LoaiChau";
@@ -225,18 +237,6 @@ namespace QLChauCay
             this.btndong.Text = "Đóng";
             this.btndong.UseVisualStyleBackColor = true;
             this.btndong.Click += new System.EventHandler(this.btndong_Click);
-            // 
-            // idLoaiChau
-            // 
-            this.idLoaiChau.DataPropertyName = "idLoaiChau";
-            this.idLoaiChau.HeaderText = "Mã Loại Chậu";
-            this.idLoaiChau.Name = "idLoaiChau";
-            // 
-            // sTenLoai
-            // 
-            this.sTenLoai.DataPropertyName = "sTenLoai";
-            this.sTenLoai.HeaderText = "Loại Chậu";
-            this.sTenLoai.Name = "sTenLoai";
             // 
             // frmLoaiChau
             // 

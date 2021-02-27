@@ -135,10 +135,10 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-              //  string query = "delete * from tbl_KhachHang where'" + txtma.Text + "'";
-                string query = "Delete_KhachHang";
+                string query = "delete from tbl_KhachHang where idKhachHang ='" + txtma.Text + "'";
+              //  string query = "Delete_KhachHang";
 
-                cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
+               // cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdskhachhang.DataSource;

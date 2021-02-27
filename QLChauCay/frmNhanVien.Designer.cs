@@ -130,7 +130,7 @@ namespace QLChauCay
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(64, 60);
             this.btnhuy.TabIndex = 3;
-            this.btnhuy.Text = "Hủy";
+            this.btnhuy.Text = "Xóa";
             this.btnhuy.UseVisualStyleBackColor = true;
             this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
@@ -189,7 +189,7 @@ namespace QLChauCay
             this.groupBox1.Size = new System.Drawing.Size(548, 228);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Thông tin chung";
             // 
             // panel1
             // 

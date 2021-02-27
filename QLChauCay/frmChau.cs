@@ -67,6 +67,8 @@ namespace QLChauCay
             txtncc.Clear(); 
             txthinhanh.Clear();
             txtkichthuoc.Clear();
+            txthinhanh.Clear();
+           
         }
         private void frmChau_Load(object sender, EventArgs e)
         {
@@ -79,6 +81,7 @@ namespace QLChauCay
                     conn.Open();
                     load();
                     conn.Close();
+                    this.getLoai();
                 }
                 catch (Exception ex)
                 {
@@ -92,7 +95,7 @@ namespace QLChauCay
             btnthemmoi.Enabled = true;
             btnluu.Enabled = false;
             btnluu.Enabled = false;
-            this.getLoai();
+            
         }
 
         private void dgdschau_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,13 +108,14 @@ namespace QLChauCay
             txtten.Text = dgdschau.Rows[i].Cells[2].Value.ToString();
             txtchatlieu.Text = dgdschau.Rows[i].Cells[3].Value.ToString();
             txtmau.Text = dgdschau.Rows[i].Cells[4].Value.ToString();
-            txtgia.Text = dgdschau.Rows[i].Cells[5].Value.ToString();
-            txtgianhap.Text = dgdschau.Rows[i].Cells[6].Value.ToString();
-            txtsl.Text = dgdschau.Rows[i].Cells[7].Value.ToString();
-            txtmota.Text = dgdschau.Rows[i].Cells[8].Value.ToString();
-            txtncc.Text = dgdschau.Rows[i].Cells[9].Value.ToString();
-            txthinhanh.Text = dgdschau.Rows[i].Cells[10].Value.ToString();
-            txtkichthuoc.Text = dgdschau.Rows[i].Cells[11].Value.ToString();
+            txtkichthuoc.Text = dgdschau.Rows[i].Cells[5].Value.ToString();
+            txtgia.Text = dgdschau.Rows[i].Cells[6].Value.ToString();
+            txtgianhap.Text = dgdschau.Rows[i].Cells[7].Value.ToString();
+             txtsl.Text = dgdschau.Rows[i].Cells[8].Value.ToString();
+            txtmota.Text = dgdschau.Rows[i].Cells[9].Value.ToString();
+            txtncc.Text = dgdschau.Rows[i].Cells[10].Value.ToString();
+            txthinhanh.Text = dgdschau.Rows[i].Cells[11].Value.ToString();
+           
 
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
@@ -154,7 +158,7 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-                string query = "update tbl_ChauCay set Status=0 where idChau= '" + txtma.Text + "' ";
+                string query = "delete from tbl_ChauCay where idChau = '"+txtma.Text+"' ";
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)dgdschau.DataSource;
@@ -174,14 +178,20 @@ namespace QLChauCay
         {
             conn = new SqlConnection(ConnectionString.connectionString);
             conn.Open();
-            string query1 = "select sTenLoai from tbl_LoaiChau";
+            string query1 = "select * from tbl_LoaiChau";
             cmd = new SqlCommand(query1, conn);
             adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "sTenLoai");
+            adapter.Fill(ds, "tbl_LoaiChau");
             cbbloai.DataSource = ds.Tables[0];
             cbbloai.DisplayMember = "sTenLoai";
+          //  cbbloai.ValueMember = "idLoaiChau";
+          //  cbbloai.DataBindings.Add(new Binding("Text", ds.Tables[0], cbbloai.ValueMember));
+            txtmaloai.DataBindings.Add(new Binding("Text", cbbloai.DataSource, "idLoaiChau"));
             conn.Close();
+
+
+       
         }
 
         private void btnluu_Click(object sender, EventArgs e)
@@ -197,7 +207,7 @@ namespace QLChauCay
                         string query = "Insert_ChauCay";
                         cmd = new SqlCommand(query, conn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@idLoaiChau", cbbloai.Text);
+                        cmd.Parameters.AddWithValue("@idLoaiChau", txtmaloai.Text);
                         cmd.Parameters.AddWithValue("@sTenChau", txtten.Text);
                         cmd.Parameters.AddWithValue("@sChatLieu", txtchatlieu.Text);
                         cmd.Parameters.AddWithValue("@sMauSac", txtmau.Text);
@@ -225,7 +235,7 @@ namespace QLChauCay
                         {
                             MessageBox.Show("Thêm thất bại.");
                         }
-                    }
+                  }
 
                     else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
                 }
@@ -250,7 +260,7 @@ namespace QLChauCay
                         cmd = new SqlCommand(query, conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idChau", txtma.Text);
-                        cmd.Parameters.AddWithValue("@idLoaiChau", cbbloai.Text);
+                        cmd.Parameters.AddWithValue("@idLoaiChau", txtmaloai.Text);
                         cmd.Parameters.AddWithValue("@sTenChau", txtten.Text);
                         cmd.Parameters.AddWithValue("@sChatLieu", txtchatlieu.Text);
                         cmd.Parameters.AddWithValue("@sMauSac", txtmau.Text);
@@ -259,7 +269,7 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sSoLuong", txtsl.Text);
                         cmd.Parameters.AddWithValue("@sMoTa", txtmota.Text);
                         cmd.Parameters.AddWithValue("@sNhaCungCap", txtncc.Text);
-                        cmd.Parameters.AddWithValue("@sHinhAnh", x.Text);
+                        cmd.Parameters.AddWithValue("@sHinhAnh", txthinhanh.Text);
                         cmd.Parameters.AddWithValue("@sKichThuoc", txtkichthuoc.Text);
                         int kq = (int)cmd.ExecuteNonQuery();
                         if (kq > 0)
@@ -338,6 +348,14 @@ namespace QLChauCay
                 txtpic.Image = Image.FromFile(dlgOpen.FileName);
                 txthinhanh.Text = dlgOpen.FileName;
             }
+        }
+
+        private void btnin_Click(object sender, EventArgs e)
+        {
+            //HoaDon.maInHD = cbMaHD.Text;
+            frm_RpChauCay inDSChau = new frm_RpChauCay();
+            inDSChau.ShowDialog();
+            this.Show();
         }
     }
 }
