@@ -11,6 +11,10 @@ namespace QLChauCay
         {
             InitializeComponent();
         }
+        public class ChiTietHoaDon
+        {
+            static public string maInHD;
+        }
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataAdapter adapter;
@@ -651,14 +655,15 @@ namespace QLChauCay
             else lbtongtien.Text = "";
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+       
+
+        private void btnin_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            ChiTietHoaDon.maInHD = cbbmahd.Text;
+            frm_RPHoaDon hd = new frm_RPHoaDon();
+            this.Hide();
+            hd.ShowDialog();
+            this.Show();
         }
     }
 }

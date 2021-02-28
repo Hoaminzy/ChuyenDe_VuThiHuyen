@@ -37,6 +37,5 @@ D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\bin\Debug\stdole.dll
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.csproj.CopyComplete
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.csprojAssemblyReference.cache
-D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frmHoaDon.resources
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frm_RpChauCay.resources
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frm_RpNhanVien.resources

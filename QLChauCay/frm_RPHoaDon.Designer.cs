@@ -31,15 +31,12 @@ namespace QLChauCay
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btndong = new System.Windows.Forms.Button();
-            this.btnlaydulieu = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dt2 = new System.Windows.Forms.DateTimePicker();
-            this.dt1 = new System.Windows.Forms.DateTimePicker();
             this.CRHoaDon = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.RpHoaDon1 = new QLChauCay.Report.RpHoaDon();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbbmahd = new System.Windows.Forms.TextBox();
+            this.btlaydulieu = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,77 +60,6 @@ namespace QLChauCay
             this.label1.TabIndex = 0;
             this.label1.Text = "BÁO CÁO HÓA ĐƠN";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btndong);
-            this.panel2.Controls.Add(this.btnlaydulieu);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dt2);
-            this.panel2.Controls.Add(this.dt1);
-            this.panel2.Location = new System.Drawing.Point(3, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 47);
-            this.panel2.TabIndex = 1;
-            // 
-            // btndong
-            // 
-            this.btndong.Location = new System.Drawing.Point(791, 9);
-            this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(77, 23);
-            this.btndong.TabIndex = 5;
-            this.btndong.Text = "Đóng";
-            this.btndong.UseVisualStyleBackColor = true;
-            this.btndong.Click += new System.EventHandler(this.btndong_Click);
-            // 
-            // btnlaydulieu
-            // 
-            this.btnlaydulieu.Location = new System.Drawing.Point(643, 9);
-            this.btnlaydulieu.Name = "btnlaydulieu";
-            this.btnlaydulieu.Size = new System.Drawing.Size(115, 23);
-            this.btnlaydulieu.TabIndex = 4;
-            this.btnlaydulieu.Text = "Lấy dữ liệu";
-            this.btnlaydulieu.UseVisualStyleBackColor = true;
-            this.btnlaydulieu.Click += new System.EventHandler(this.btnlaydulieu_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(447, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Đến: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Từ ngày: ";
-            // 
-            // dt2
-            // 
-            this.dt2.CustomFormat = "dd/MM/yyyy";
-            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt2.Location = new System.Drawing.Point(491, 12);
-            this.dt2.Name = "dt2";
-            this.dt2.Size = new System.Drawing.Size(123, 20);
-            this.dt2.TabIndex = 1;
-            // 
-            // dt1
-            // 
-            this.dt1.CustomFormat = "dd/MM/yyyy";
-            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt1.Location = new System.Drawing.Point(271, 12);
-            this.dt1.Name = "dt1";
-            this.dt1.Size = new System.Drawing.Size(123, 20);
-            this.dt1.TabIndex = 0;
-            // 
             // CRHoaDon
             // 
             this.CRHoaDon.ActiveViewIndex = -1;
@@ -141,17 +67,54 @@ namespace QLChauCay
             this.CRHoaDon.Cursor = System.Windows.Forms.Cursors.Default;
             this.CRHoaDon.Location = new System.Drawing.Point(3, 124);
             this.CRHoaDon.Name = "CRHoaDon";
-            this.CRHoaDon.Size = new System.Drawing.Size(1036, 458);
+            this.CRHoaDon.Size = new System.Drawing.Size(1036, 488);
             this.CRHoaDon.TabIndex = 2;
             this.CRHoaDon.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cbbmahd);
+            this.panel2.Controls.Add(this.btlaydulieu);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(139, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(661, 47);
+            this.panel2.TabIndex = 3;
+            // 
+            // cbbmahd
+            // 
+            this.cbbmahd.Location = new System.Drawing.Point(245, 12);
+            this.cbbmahd.Name = "cbbmahd";
+            this.cbbmahd.ReadOnly = true;
+            this.cbbmahd.Size = new System.Drawing.Size(100, 20);
+            this.cbbmahd.TabIndex = 3;
+            // 
+            // btlaydulieu
+            // 
+            this.btlaydulieu.Location = new System.Drawing.Point(372, 12);
+            this.btlaydulieu.Name = "btlaydulieu";
+            this.btlaydulieu.Size = new System.Drawing.Size(75, 23);
+            this.btlaydulieu.TabIndex = 2;
+            this.btlaydulieu.Text = "Đóng";
+            this.btlaydulieu.UseVisualStyleBackColor = true;
+            this.btlaydulieu.Click += new System.EventHandler(this.btlaydulieu_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(171, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mã Hóa Đơn";
             // 
             // frm_RPHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 581);
-            this.Controls.Add(this.CRHoaDon);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.CRHoaDon);
             this.Controls.Add(this.panel1);
             this.Name = "frm_RPHoaDon";
             this.Text = "frm_RPHoaDon";
@@ -168,14 +131,11 @@ namespace QLChauCay
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btndong;
-        private System.Windows.Forms.Button btnlaydulieu;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dt2;
-        private System.Windows.Forms.DateTimePicker dt1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer CRHoaDon;
         private Report.RpHoaDon RpHoaDon1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btlaydulieu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox cbbmahd;
     }
 }
