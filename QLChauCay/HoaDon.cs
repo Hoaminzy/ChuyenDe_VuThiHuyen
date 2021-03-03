@@ -37,8 +37,9 @@ namespace QLChauCay
             resetCTHD();
             resetHD();
             txtthanhtien.Text = "0";
-            cbbnv.Text = "";
             cbbkh.Text = "";
+            txtmakh.Text = "";
+            cbbmahd.Text = "";
             if (cbbmahd.Text != "")
             {
                 getAutoMaHD();
@@ -58,6 +59,7 @@ namespace QLChauCay
             btnhuy.Enabled = true;
             btnsua.Enabled = true;
             dtngaylap.Enabled = true;
+            cbbkh.Enabled = false;
         }
 
         void getNV()
@@ -232,6 +234,7 @@ namespace QLChauCay
             btnthem.Enabled = true;
             cbbmahd.Enabled = false;
             btnluu.Enabled = true;
+            cbbkh.Enabled = true;
             getAutoNV();
             getKH();
             resetHD();

@@ -89,7 +89,6 @@ namespace QLChauCay
             string query = "select_AllNV";
             cmd = new SqlCommand(query, conn);
             adapter = new SqlDataAdapter(cmd);
-            //data = new DataTable();
             adapter.Fill(data);
             drdsnhanvien.DataSource = data;
             conn.Close();

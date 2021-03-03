@@ -154,22 +154,34 @@ namespace QLChauCay
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            DialogResult thongbao;
-            thongbao = MessageBox.Show("Bạn chắc chắn muốn hủy?", "Thông báo", MessageBoxButtons.OKCancel);
-            if (thongbao == DialogResult.OK)
+            if(txtmaloai.Text == "")
             {
-                conn = new SqlConnection(ConnectionString.connectionString);
-                conn.Open();
-                string query = "Delete from tbl_LoaiChau where idLoaiChau = '"+txtmaloai.Text+"'";
-                cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                DataTable dt = (DataTable)dgdsloaichau.DataSource;
-                if (dt != null)
-                    dt.Clear();
-                load();
-                MessageBox.Show("Hủy thành công.");
-                conn.Close();
+                MessageBox.Show("Bạn chưa chọn mã!");
             }
+               else
+                {
+                DialogResult thongbao;
+                thongbao = MessageBox.Show("Bạn chắc chắn muốn hủy?", "Thông báo", MessageBoxButtons.OKCancel);
+                if (thongbao == DialogResult.OK)
+                {
+                    conn = new SqlConnection(ConnectionString.connectionString);
+                    conn.Open();
+                    //  string query = "Delete from tbl_LoaiChau where idLoaiChau = '"+txtmaloai.Text+"'";
+
+                    string query = "Delete_LoaiChau";
+                    cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idLoaiChau", txtmaloai.Text);
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = (DataTable)dgdsloaichau.DataSource;
+                    if (dt != null)
+                        dt.Clear();
+                    load();
+                    MessageBox.Show("Hủy thành công.");
+                    conn.Close();
+                }
+            }
+            
             reset();
             clockText();
             btnthemmoi.Enabled = true;
