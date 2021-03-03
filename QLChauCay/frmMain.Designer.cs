@@ -157,7 +157,7 @@ namespace QLChauCay
             // 
             this.baoCaoHoaDon.Name = "baoCaoHoaDon";
             this.baoCaoHoaDon.Size = new System.Drawing.Size(180, 22);
-            this.baoCaoHoaDon.Text = "Hóa Đơn";
+            this.baoCaoHoaDon.Text = "Doanh Số";
             this.baoCaoHoaDon.Click += new System.EventHandler(this.baoCaoHoaDon_Click);
             // 
             // baoCaoChauCay
@@ -207,7 +207,7 @@ namespace QLChauCay
             // 
             // btnbanhang
             // 
-            this.btnbanhang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnbanhang.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnbanhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbanhang.ForeColor = System.Drawing.Color.Cornsilk;
             this.btnbanhang.Location = new System.Drawing.Point(41, 35);
@@ -217,6 +217,7 @@ namespace QLChauCay
             this.btnbanhang.Text = "Bán Hàng";
             this.btnbanhang.UseVisualStyleBackColor = false;
             this.btnbanhang.UseWaitCursor = true;
+            this.btnbanhang.Click += new System.EventHandler(this.btnbanhang_Click);
             // 
             // groupBox2
             // 

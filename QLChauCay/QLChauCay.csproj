@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dataset_ChauCay.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\DataSet_DoanhSo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_DoanhSo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\Dataset_HoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +140,12 @@
     <Compile Include="frmThongTinTaiKhoan.Designer.cs">
       <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_DoanhSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DoanhSo.Designer.cs">
+      <DependentUpon>frm_DoanhSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_RpChauCay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,12 +179,6 @@
       <DependentUpon>RpChauCay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report\RpHoaDon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RpHoaDon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Report\RpInHoaDonBH.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +189,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RpNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RP_HoaDonDS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_HoaDonDS.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmCapNhatThongTin.resx">
@@ -209,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinTaiKhoan.resx">
       <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DoanhSo.resx">
+      <DependentUpon>frm_DoanhSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RpChauCay.resx">
       <DependentUpon>frm_RpChauCay.cs</DependentUpon>
@@ -236,10 +250,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RpChauCay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\RpHoaDon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RpHoaDon.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report\RpInHoaDonBH.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RpInHoaDonBH.cs</LastGenOutput>
@@ -247,6 +257,10 @@
     <EmbeddedResource Include="Report\RpNhanVien.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RpNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RP_HoaDonDS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_HoaDonDS.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Dataset\Dataset_ChauCay.xsc">
       <DependentUpon>Dataset_ChauCay.xsd</DependentUpon>
@@ -258,6 +272,17 @@
     </None>
     <None Include="Dataset\Dataset_ChauCay.xss">
       <DependentUpon>Dataset_ChauCay.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DoanhSo.xsc">
+      <DependentUpon>DataSet_DoanhSo.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DoanhSo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_DoanhSo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_DoanhSo.xss">
+      <DependentUpon>DataSet_DoanhSo.xsd</DependentUpon>
     </None>
     <None Include="Dataset\Dataset_HoaDon.xsc">
       <DependentUpon>Dataset_HoaDon.xsd</DependentUpon>

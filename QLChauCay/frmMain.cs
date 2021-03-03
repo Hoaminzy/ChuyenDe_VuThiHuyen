@@ -149,7 +149,7 @@ namespace QLChauCay
      
         private void baoCaoHoaDon_Click(object sender, EventArgs e)
         {
-            frm_RPHoaDon tk = new frm_RPHoaDon();
+            frm_DoanhSo tk = new frm_DoanhSo();
             this.Hide();
             tk.ShowDialog();
             this.Show();
@@ -169,6 +169,15 @@ namespace QLChauCay
             this.Hide();
             chau.ShowDialog();
             this.Show();
+        }
+
+        private void btnbanhang_Click(object sender, EventArgs e)
+        {
+            HoaDon hoadon = new HoaDon();
+            this.Hide();
+            hoadon.ShowDialog();
+            this.Show();
+            LoadHoaDon();
         }
     }
 }

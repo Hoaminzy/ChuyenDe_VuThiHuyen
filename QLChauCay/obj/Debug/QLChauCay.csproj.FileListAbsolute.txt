@@ -39,3 +39,4 @@ D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.csproj.CopyComplet
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.csprojAssemblyReference.cache
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frm_RpChauCay.resources
 D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frm_RpNhanVien.resources
+D:\BT\DATN\Huyen\QLBH\QLChauCay\QLChauCay\obj\Debug\QLChauCay.frm_DoanhSo.resources

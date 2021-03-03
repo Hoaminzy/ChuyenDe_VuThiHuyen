@@ -32,7 +32,6 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.CRHoaDon = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.RpHoaDon1 = new QLChauCay.Report.RpHoaDon();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbbmahd = new System.Windows.Forms.TextBox();
             this.btlaydulieu = new System.Windows.Forms.Button();
@@ -132,7 +131,6 @@ namespace QLChauCay
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer CRHoaDon;
-        private Report.RpHoaDon RpHoaDon1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btlaydulieu;
         private System.Windows.Forms.Label label2;

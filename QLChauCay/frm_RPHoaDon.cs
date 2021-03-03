@@ -33,20 +33,7 @@ namespace QLChauCay
             // loadDL();
             inHoaDon();
         }
-        void loadDL()
-        {
-            conn = new SqlConnection(ConnectionString.connectionString);
-            conn.Open();
-            string getDS = "rp_HoaDon";
-            //string getDS = query;
-            cmd = new SqlCommand(getDS, conn);
-            adapter = new SqlDataAdapter(cmd);
-            adapter.Fill(data);
-            Report.RpHoaDon rp = new Report.RpHoaDon();
-            rp.SetDataSource(data);
-            CRHoaDon.ReportSource = rp;
-            conn.Close();
-        }
+       
         void inHoaDon()
         {
             using (conn = new SqlConnection(ConnectionString.connectionString))

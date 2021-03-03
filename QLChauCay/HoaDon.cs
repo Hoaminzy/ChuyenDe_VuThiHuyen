@@ -39,6 +39,10 @@ namespace QLChauCay
             txtthanhtien.Text = "0";
             cbbnv.Text = "";
             cbbkh.Text = "";
+            if (cbbmahd.Text != "")
+            {
+                getAutoMaHD();
+            }
 
         }
 
@@ -142,6 +146,28 @@ namespace QLChauCay
                 }
             }
         }
+        void getAutoMaHD()
+        {
+
+            conn.Open();
+            //string showCTHD = "select * from cthoadon where ma_hd="+cbMaHD.SelectedValue;
+            string showCTHD = "select tbl_ChiTietHoaDon.idHoaDon, tbl_ChauCay.sTenChau,  tbl_ChiTietHoaDon.sSoLuong, tbl_ChiTietHoaDon.fDonGia,(sSoLuong*fDonGia) as thanh_tien  from tbl_ChiTietHoaDon, tbl_ChauCay where tbl_ChiTietHoaDon.idChau = tbl_ChauCay.idChau and idHoaDon = " + frmMain.hoadon.maHD;
+            SqlCommand command = new SqlCommand(showCTHD, conn);
+            SqlDataAdapter a = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            a.Fill(dt);
+            dghoadon.DataSource = dt;
+            //update tổng tiền
+            int sc = dghoadon.Rows.Count;
+            float thanhtien = 0;
+            for (int i = 0; i < sc - 1; i++)
+            {
+                thanhtien += float.Parse(dghoadon.Rows[i].Cells["thanh_tien"].Value.ToString());
+                txttongtien.Text = thanhtien.ToString();
+            }
+
+            cbbmahd.Text = frmMain.hoadon.maHD;
+        }
         void getMaHD()
         {
             getNV();
@@ -165,7 +191,9 @@ namespace QLChauCay
             cbbnv.DataBindings.Add(new Binding("Text", cbbmahd.DataSource, "sTenNV"));
             cbbkh.DataBindings.Clear();
             cbbkh.DataBindings.Add(new Binding("Text", cbbmahd.DataSource, "sTenKH"));
-            //txtMaHD.DataBindings.Add(new Binding("Text", cbMaHD.DataSource, "ma_hd"));
+            txttongtien.DataBindings.Clear();
+            txttongtien.DataBindings.Add(new Binding("Text", cbbmahd.DataSource, "tong_tien"));
+
             conn.Close();
             cbbmahd.Text = "";
         }
@@ -664,6 +692,47 @@ namespace QLChauCay
             this.Hide();
             hd.ShowDialog();
             this.Show();
+        }
+
+    
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            using (conn = new SqlConnection(ConnectionString.connectionString))
+            {
+                try
+                {
+                    if (txttimkiem.Text != null)
+                    {
+                        conn.Open();
+                        string timTen = "select * from tbl_HoaDon where idHoaDon LIKE'%" + txttimkiem.Text + "%'";
+                        SqlCommand command = new SqlCommand(timTen, conn);
+                        SqlDataAdapter a = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        a.Fill(dt);
+                        dghoadon.DataSource = dt;
+                    }
+                    else
+                    {
+                        loadDL();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối" + ex.Message);
+                }
+
+            }
+        }
+
+        private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btntimkiem_Click(this, new EventArgs());
+            }
         }
     }
 }
