@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -117,18 +118,35 @@ namespace QLChauCay
         {
             UnclockText();
             int i = drdsnhanvien.CurrentRow.Index;
-            //txtManv.ReadOnly = true;
             txtma.Text = drdsnhanvien.Rows[i].Cells[0].Value.ToString();
             txtten.Text = drdsnhanvien.Rows[i].Cells[1].Value.ToString();
-            txttaikhoan.Text = drdsnhanvien.Rows[i].Cells[2].Value.ToString();
-            txtdiachi.Text = drdsnhanvien.Rows[i].Cells[3].Value.ToString();
-            txtcmnd.Text = drdsnhanvien.Rows[i].Cells[4].Value.ToString();
-            if (drdsnhanvien.Rows[i].Cells[5].Value.ToString() == "1")
+           
+            txtdiachi.Text = drdsnhanvien.Rows[i].Cells[2].Value.ToString();
+            txtcmnd.Text = drdsnhanvien.Rows[i].Cells[3].Value.ToString();
+            if (drdsnhanvien.Rows[i].Cells[4].Value.ToString() == "1")
                 rdnam.Checked = true;
             else rdnu.Checked = true;
-            txtsdt.Text = drdsnhanvien.Rows[i].Cells[6].Value.ToString();
-            dtngaysinh.Text = drdsnhanvien.Rows[i].Cells[7].Value.ToString();
+            txtsdt.Text = drdsnhanvien.Rows[i].Cells[5].Value.ToString();
+           
           
+            dtngaysinh.Text = drdsnhanvien.Rows[i].Cells[6].Value.ToString();
+            txttaikhoan.Text = drdsnhanvien.Rows[i].Cells[7].Value.ToString();
+            string mahoa = drdsnhanvien.Rows[i].Cells[8].Value.ToString();
+            MD5 mh = MD5.Create();
+            //Chuyển kiểu chuổi thành kiểu byte
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(mahoa);
+            //mã hóa chuỗi đã chuyển
+            byte[] hash = mh.ComputeHash(inputBytes);
+            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
+            StringBuilder sb = new StringBuilder();
+
+            for (int i1 = 0; i1 < hash.Length; i1++)
+            {
+                sb.Append(hash[i1].ToString("X2"));
+            }
+            //MessageBox.Show(sb.ToString());
+            txtmatkhau.Text = sb.ToString();
+
 
             btnthemmoi.Enabled = true;
             btnluu.Enabled = true;
@@ -239,6 +257,7 @@ namespace QLChauCay
                                 string query = "Update_NhanVien";
                                 cmd = new SqlCommand(query, conn);
                                 cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idNhanVien", txtma.Text);
                                 cmd.Parameters.AddWithValue("@sTenNV", txtten.Text);
                                 cmd.Parameters.AddWithValue("@sDiaChi", txtdiachi.Text);
                                 cmd.Parameters.AddWithValue("@sCMND", txtcmnd.Text);
