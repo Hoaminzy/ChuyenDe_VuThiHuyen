@@ -31,6 +31,13 @@ namespace QLChauCay
         {
             this.components = new System.ComponentModel.Container();
             this.drdskhachhang = new System.Windows.Forms.DataGridView();
+            this.idKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblKhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btndong = new System.Windows.Forms.Button();
@@ -57,13 +64,6 @@ namespace QLChauCay
             this.label2 = new System.Windows.Forms.Label();
             this.txtma = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.idKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.drdskhachhang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKhachHangBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,6 +88,48 @@ namespace QLChauCay
             this.drdskhachhang.Size = new System.Drawing.Size(948, 204);
             this.drdskhachhang.TabIndex = 9;
             this.drdskhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drdskhachhang_CellContentClick);
+            // 
+            // idKhachHang
+            // 
+            this.idKhachHang.DataPropertyName = "idKhachHang";
+            this.idKhachHang.HeaderText = "Mã Khách Hàng";
+            this.idKhachHang.Name = "idKhachHang";
+            // 
+            // sTenKH
+            // 
+            this.sTenKH.DataPropertyName = "sTenKH";
+            this.sTenKH.HeaderText = "Tên Khách Hàng";
+            this.sTenKH.Name = "sTenKH";
+            // 
+            // sDiaChi
+            // 
+            this.sDiaChi.DataPropertyName = "sDiaChi";
+            this.sDiaChi.HeaderText = "Địa Chỉ";
+            this.sDiaChi.Name = "sDiaChi";
+            // 
+            // sCMND
+            // 
+            this.sCMND.DataPropertyName = "sCMND";
+            this.sCMND.HeaderText = "CMND";
+            this.sCMND.Name = "sCMND";
+            // 
+            // sGioiTinh
+            // 
+            this.sGioiTinh.DataPropertyName = "sGioiTinh";
+            this.sGioiTinh.HeaderText = "Giới Tính";
+            this.sGioiTinh.Name = "sGioiTinh";
+            // 
+            // sSDT
+            // 
+            this.sSDT.DataPropertyName = "sSDT";
+            this.sSDT.HeaderText = "SĐT";
+            this.sSDT.Name = "sSDT";
+            // 
+            // sNgaySinh
+            // 
+            this.sNgaySinh.DataPropertyName = "sNgaySinh";
+            this.sNgaySinh.HeaderText = "Ngày Sinh";
+            this.sNgaySinh.Name = "sNgaySinh";
             // 
             // tblKhachHangBindingSource
             // 
@@ -137,6 +179,7 @@ namespace QLChauCay
             this.txttimkiem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txttimkiem.Size = new System.Drawing.Size(261, 30);
             this.txttimkiem.TabIndex = 4;
+            this.txttimkiem.TextChanged += new System.EventHandler(this.txttimkiem_TextChanged);
             this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
             // 
             // btnxoa
@@ -347,48 +390,6 @@ namespace QLChauCay
             this.label1.Size = new System.Drawing.Size(300, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "DANH SÁCH KHÁCH HÀNG";
-            // 
-            // idKhachHang
-            // 
-            this.idKhachHang.DataPropertyName = "idKhachHang";
-            this.idKhachHang.HeaderText = "Mã Khách Hàng";
-            this.idKhachHang.Name = "idKhachHang";
-            // 
-            // sTenKH
-            // 
-            this.sTenKH.DataPropertyName = "sTenKH";
-            this.sTenKH.HeaderText = "Tên Khách Hàng";
-            this.sTenKH.Name = "sTenKH";
-            // 
-            // sDiaChi
-            // 
-            this.sDiaChi.DataPropertyName = "sDiaChi";
-            this.sDiaChi.HeaderText = "Địa Chỉ";
-            this.sDiaChi.Name = "sDiaChi";
-            // 
-            // sCMND
-            // 
-            this.sCMND.DataPropertyName = "sCMND";
-            this.sCMND.HeaderText = "CMND";
-            this.sCMND.Name = "sCMND";
-            // 
-            // sGioiTinh
-            // 
-            this.sGioiTinh.DataPropertyName = "sGioiTinh";
-            this.sGioiTinh.HeaderText = "Giới Tính";
-            this.sGioiTinh.Name = "sGioiTinh";
-            // 
-            // sSDT
-            // 
-            this.sSDT.DataPropertyName = "sSDT";
-            this.sSDT.HeaderText = "SĐT";
-            this.sSDT.Name = "sSDT";
-            // 
-            // sNgaySinh
-            // 
-            this.sNgaySinh.DataPropertyName = "sNgaySinh";
-            this.sNgaySinh.HeaderText = "Ngày Sinh";
-            this.sNgaySinh.Name = "sNgaySinh";
             // 
             // frmKhachHang
             // 

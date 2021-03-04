@@ -216,9 +216,9 @@ namespace QLChauCay
         void resetHD()
         {
             cbbmahd.Text = "";
-            //cbTenNV.Text = "";
-            //txtMaNV.Clear();
             dtngaylap.Value = DateTime.Now;
+            cbbkh.Text = "";
+            txtmakh.Text = "";
         }
         void unlockHD()
         {
@@ -313,14 +313,11 @@ namespace QLChauCay
                     {
                         if (txtsl != null)
                         {
-                            //conn.Open();
+                            conn.Open();
                             //string cthd = "sp_ThemCTHD";
                             string cthd = "insert into tbl_ChiTietHoaDon (idHoaDon, idChau, sSoLuong, fDonGia) values('" + cbbmahd.Text + "','" + cbbchau.Text + "', '" + txtsl.Text + "', '" + txtdongia.Text + "')";
                             SqlCommand cmd2 = new SqlCommand(cthd, conn);
-                            //cmd2.Parameters.AddWithValue("@mahd", cbMaHD.Text);
-                            //cmd2.Parameters.AddWithValue("@mahh", txtMaHH.Text);
-                            //cmd2.Parameters.AddWithValue("@soluong", txtSoLuong.Text);
-                            //cmd2.Parameters.AddWithValue("@dongia", txtDonGia.Text);
+
                             int kq = (int)cmd2.ExecuteNonQuery();
                             if (kq > 0)
                             {
@@ -566,8 +563,8 @@ namespace QLChauCay
                         cmd3.Parameters.AddWithValue("@Createdate", dtngaylap.Value);
 
                         cmd3.ExecuteNonQuery();
-                      /*  if (txtsl.Text != "")
-                        {*/
+                       if (txtsl.Text != "")
+                        {
                             string query1 = "Update_CTHoaDon";
                             //string query1 = "update cthoadon set ma_hd='"+cbMaHD.SelectedValue+"', ma_hh = '"+txtMaHH.Text+"', sl_xuat='"+txtSoLuong.Text+"' where ma_hd = '"+cbMaHD.Text+"' and ma_hh = '"+txtMaHH.Text+"'";
                             SqlCommand cmd4 = new SqlCommand(query1, conn);
@@ -585,8 +582,8 @@ namespace QLChauCay
                             }
                             else MessageBox.Show("Sửa chi tiết hóa đơn thất bại.");
                             conn.Close();
-                        /*}
-                        else MessageBox.Show("Hãy nhập đầy đủ thông tin.");*/
+                        }
+                        else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
                     }
                     else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
                 }

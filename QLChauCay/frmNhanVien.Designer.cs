@@ -60,6 +60,15 @@ namespace QLChauCay
             this.label2 = new System.Windows.Forms.Label();
             this.txtma = new System.Windows.Forms.TextBox();
             this.drdsnhanvien = new System.Windows.Forms.DataGridView();
+            this.idNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -370,11 +379,75 @@ namespace QLChauCay
             // drdsnhanvien
             // 
             this.drdsnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drdsnhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idNhanVien,
+            this.sTenNV,
+            this.sDiaChi,
+            this.sCMND,
+            this.sGioiTinh,
+            this.sSDT,
+            this.sNgaySinh,
+            this.Username,
+            this.Password});
             this.drdsnhanvien.Location = new System.Drawing.Point(19, 323);
             this.drdsnhanvien.Name = "drdsnhanvien";
             this.drdsnhanvien.Size = new System.Drawing.Size(948, 205);
             this.drdsnhanvien.TabIndex = 5;
             this.drdsnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drdsnhanvien_CellContentClick);
+            // 
+            // idNhanVien
+            // 
+            this.idNhanVien.DataPropertyName = "idNhanVien";
+            this.idNhanVien.HeaderText = "Mã Nhân Viên";
+            this.idNhanVien.Name = "idNhanVien";
+            // 
+            // sTenNV
+            // 
+            this.sTenNV.DataPropertyName = "sTenNV";
+            this.sTenNV.HeaderText = "Tên Nhân Viên";
+            this.sTenNV.Name = "sTenNV";
+            // 
+            // sDiaChi
+            // 
+            this.sDiaChi.DataPropertyName = "sDiaChi";
+            this.sDiaChi.HeaderText = "Địa Chỉ";
+            this.sDiaChi.Name = "sDiaChi";
+            // 
+            // sCMND
+            // 
+            this.sCMND.DataPropertyName = "sCMND";
+            this.sCMND.HeaderText = "CMND";
+            this.sCMND.Name = "sCMND";
+            // 
+            // sGioiTinh
+            // 
+            this.sGioiTinh.DataPropertyName = "sGioiTinh";
+            this.sGioiTinh.HeaderText = "Giới Tính";
+            this.sGioiTinh.Name = "sGioiTinh";
+            // 
+            // sSDT
+            // 
+            this.sSDT.DataPropertyName = "sSDT";
+            this.sSDT.HeaderText = "Số Điện Thoại";
+            this.sSDT.Name = "sSDT";
+            // 
+            // sNgaySinh
+            // 
+            this.sNgaySinh.DataPropertyName = "sNgaySinh";
+            this.sNgaySinh.HeaderText = "Ngày Sinh";
+            this.sNgaySinh.Name = "sNgaySinh";
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Tên Tài Khoản";
+            this.Username.Name = "Username";
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Mật Khẩu";
+            this.Password.Name = "Password";
             // 
             // frmNhanVien
             // 
@@ -433,5 +506,14 @@ namespace QLChauCay
         private System.Windows.Forms.RadioButton rdnu;
         private System.Windows.Forms.RadioButton rdnam;
         private System.Windows.Forms.Button btndong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTenNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
     }
 }

@@ -353,5 +353,10 @@ namespace QLChauCay
                 btntimkiem_Click(this, new EventArgs());
             }
         }
+
+        private void txttimkiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
