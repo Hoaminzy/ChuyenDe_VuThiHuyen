@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -138,7 +139,7 @@ namespace QLChauCay
                 string query = "delete from tbl_KhachHang where idKhachHang ='" + txtma.Text + "'";
               //  string query = "Delete_KhachHang";
 
-               // cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
+                cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdskhachhang.DataSource;
@@ -166,12 +167,30 @@ namespace QLChauCay
         {
             using (conn = new SqlConnection(ConnectionString.connectionString))
             {
+                conn.Open();
+                DataTable dt1 = new DataTable();//check trùng SDT
+                string sqlSelect1 = "Select sSDT from tbl_KhachHang where sSDt='" + txtsdt.Text + "'";
+                SqlDataAdapter da1 = new SqlDataAdapter(sqlSelect1, conn);
+                da1.Fill(dt1);
                 try
                 {
-                    if (txtten.Text != "" && txtsdt.Text != "")
+                    if (txtten.Text == "" && txtsdt.Text == "")
                     {
-                       
-                            conn.Open();
+                        MessageBox.Show("Hãy nhập đầy đủ thông tin.");
+                    }else if (dt1.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Sô điện thoại đã được sử dụng!");
+                    }
+                    else
+                    {
+                      
+                        //if (kiemtratontai()==true) {
+                        //    MessageBox.Show("Sô điện thoại đã được sử dụng!");
+                        //}
+                        //else
+                        //{
+
+                        
                             string query = "Insert_KhachHang";
                             cmd = new SqlCommand(query, conn);
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -187,9 +206,9 @@ namespace QLChauCay
                                 cmd.Parameters.AddWithValue("@sGioiTinh", rdnu.Text);
                             }
                             cmd.Parameters.AddWithValue("@sSDT", txtsdt.Text);
-                        dtngaysinh.CustomFormat = "dd/MM/yyyy";
-                        cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
-                      
+                            dtngaysinh.CustomFormat = "dd/MM/yyyy";
+                            cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
+
                             int kq = (int)cmd.ExecuteNonQuery();
                             if (kq > 0)
                             {
@@ -204,19 +223,11 @@ namespace QLChauCay
                                 reset();
                             }
                             else
-                            { 
-                                MessageBox.Show("Thêm thất bại."); 
+                            {
+                                MessageBox.Show("Thêm thất bại.");
                             }
-                        }
-                      
-                       
-                       
-                    
-
-
-
-
-                    else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
+                        //}
+                    }    
                 }
                 catch (Exception ex)
                 {
@@ -224,7 +235,25 @@ namespace QLChauCay
                 }
             }
         }
+        private bool kiemtratontai()
+        {
+            bool tatkt = false;
+            string maso = txtsdt.Text;
+            conn = new SqlConnection(ConnectionString.connectionString);
+           
+            conn.Open();
 
+            SqlDataAdapter da_kiemtra = new SqlDataAdapter("Select count(sSDT) from tbl_KhachHang where sSDT='" + maso + "'", conn);
+            DataTable dt_kiemtra = new DataTable();
+            da_kiemtra.Fill(dt_kiemtra);
+
+            if (dt_kiemtra.Rows.Count > 0)
+            {
+                tatkt = true;
+            }
+            da_kiemtra.Dispose();
+            return tatkt;
+        }
         private void btnsua_Click(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(ConnectionString.connectionString))
