@@ -256,29 +256,45 @@ namespace QLChauCay
         }
         private void btnsua_Click(object sender, EventArgs e)
         {
+           
+
             using (conn = new SqlConnection(ConnectionString.connectionString))
             {
+                conn.Open();
+                DataTable dt1 = new DataTable();//check trùng SDT
+                string sqlSelect1 = "Select sSDT from tbl_KhachHang where sSDt='" + txtsdt.Text + "'";
+                SqlDataAdapter da1 = new SqlDataAdapter(sqlSelect1, conn);
+                da1.Fill(dt1);
                 try
                 {
-                    if (txtten.Text != "" && txtsdt.Text != "")
+                    if (txtten.Text == "" && txtsdt.Text == "")
                     {
                         
-                            conn.Open();
-                            string query = "Update_KhachHang";
-                            cmd = new SqlCommand(query, conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
+                        MessageBox.Show("Hãy nhập đầy đủ thông tin.");
+
+                    }else if (dt1.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Số điện thoại đã được sử dụng!");
+
+                    }
+
+                    else
+                    {
+                        string query = "Update_KhachHang";
+                        cmd = new SqlCommand(query, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
                         cmd.Parameters.AddWithValue("@sTenKH", txtten.Text);
-                            cmd.Parameters.AddWithValue("@sDiaChi", txtdiachi.Text);
-                            cmd.Parameters.AddWithValue("@sCMND", txtcmnd.Text);
-                      /*  if (rdnam.Checked == true)
-                        {
-                            cmd.Parameters.AddWithValue("@sGioiTinh", rdnam.Text);
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@sGioiTinh", rdnu.Text);
-                        }*/
+                        cmd.Parameters.AddWithValue("@sDiaChi", txtdiachi.Text);
+                        cmd.Parameters.AddWithValue("@sCMND", txtcmnd.Text);
+                        /*  if (rdnam.Checked == true)
+                          {
+                              cmd.Parameters.AddWithValue("@sGioiTinh", rdnam.Text);
+                          }
+                          else
+                          {
+                              cmd.Parameters.AddWithValue("@sGioiTinh", rdnu.Text);
+                          }*/
                         string gt;
                         if (rdnam.Checked)
                             gt = "Nam";
@@ -287,27 +303,25 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sGioiTinh", gt);
 
                         cmd.Parameters.AddWithValue("@sSDT", txtsdt.Text);
-                            cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
-                            int kq = (int)cmd.ExecuteNonQuery();
-                            if (kq > 0)
-                            {
-                                MessageBox.Show("Cập nhật thành công!");
-                                DataTable dt = (DataTable)drdskhachhang.DataSource;
-                                if (dt != null)
-                                    dt.Clear();
-                                loadKH();
-                                conn.Close();
-                                btnthemmoi.Enabled = true;
-                                btnsua.Enabled = false;
-                                reset();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Cập nhật thất bại.");
-                            }
-                    }
-
-                    else MessageBox.Show("Hãy nhập đầy đủ thông tin.");
+                        cmd.Parameters.AddWithValue("@sNgaySinh", dtngaysinh.Text);
+                        int kq = (int)cmd.ExecuteNonQuery();
+                        if (kq > 0)
+                        {
+                            MessageBox.Show("Cập nhật thành công!");
+                            DataTable dt = (DataTable)drdskhachhang.DataSource;
+                            if (dt != null)
+                                dt.Clear();
+                            loadKH();
+                            conn.Close();
+                            btnthemmoi.Enabled = true;
+                            btnsua.Enabled = false;
+                            reset();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật thất bại.");
+                        }
+                    }    
                 }
                 catch (Exception ex)
                 {

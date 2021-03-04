@@ -99,10 +99,10 @@ namespace QLChauCay
             adapter.Fill(ds, "tbl_KhachHang");
             cbbkh.DataSource = ds.Tables[0];
             //adapter.Fill(data);
-            cbbkh.DisplayMember = "sTenKH";
+            cbbkh.DisplayMember = "sSDT";
             cbbkh.ValueMember = "idKhachHang";
             txtmakh.DataBindings.Clear();
-            txtmakh.DataBindings.Add(new Binding("Text", cbbkh.DataSource, "idKhachHang"));
+            txtmakh.DataBindings.Add(new Binding("Text", cbbkh.DataSource, "sTenKH"));
             conn.Close();
         }
         void getMaHH()
@@ -262,7 +262,7 @@ namespace QLChauCay
                 thanhtien += float.Parse(dghoadon.Rows[i].Cells["thanh_tien"].Value.ToString());
                 txtthanhtien.Text = thanhtien.ToString();
             }
-
+            conn.Close();
 
         }
         private void btnluu_Click(object sender, EventArgs e)
@@ -282,7 +282,7 @@ namespace QLChauCay
                         cmd1.Parameters.AddWithValue("@Status", cbbstatus.Text);
                         cmd1.Parameters.AddWithValue("@Createdate", dtngaylap.Text);
                         cmd1.ExecuteNonQuery();
-                        //conn.Close();
+                        conn.Close();
 
                     }
                     catch (Exception ex)
@@ -292,7 +292,7 @@ namespace QLChauCay
 
                     try
                     {
-                        //conn.Open();
+                       
                         string getMaxHD = "select max(idHoaDon) as max from tbl_HoaDon";
                         SqlCommand cmd2 = new SqlCommand(getMaxHD, conn);
                         SqlDataReader dr;
@@ -359,10 +359,10 @@ namespace QLChauCay
                                 {
                                     MessageBox.Show("Thêm thành công!");
                                     loadDL();
-                                    conn.Close();
+                                   
                                 }
                                 else MessageBox.Show("Thêm thất bại.");
-                                //conn.Close();
+                                conn.Close();
 
                             }
                             else
@@ -397,6 +397,7 @@ namespace QLChauCay
                     }
                 }
                 resetCTHD();
+                conn.Close();
             }
         }
         public bool kiemtra(string maHH, string maHD)
@@ -409,14 +410,15 @@ namespace QLChauCay
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read() == true)
             {
-                conn.Close();
+           
                 return true;
             }
             else
             {
-                conn.Close();
+             
                 return false;
             }
+            conn.Close();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -598,6 +600,7 @@ namespace QLChauCay
                 btnluu.Enabled = true;
                 txtdong.Enabled = true;
                 resetCTHD();
+                conn.Close();
             }
         }
 
@@ -615,6 +618,7 @@ namespace QLChauCay
             resetCTHD();
             btnluu.Enabled = true;
             if (cbbmahd.Text != null) btnhuy.Enabled = true;
+            conn.Close();
         }
 
         private void txtsl_TextChanged(object sender, EventArgs e)
@@ -715,6 +719,7 @@ namespace QLChauCay
                     else
                     {
                         loadDL();
+                        conn.Close();
                     }
 
                 }
@@ -732,6 +737,44 @@ namespace QLChauCay
             if (e.KeyCode == Keys.Enter)
             {
                 btntimkiem_Click(this, new EventArgs());
+            }
+        }
+
+        private void cbbkh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btntk_Click(this, new EventArgs());
+            }
+        }
+
+        private void btntk_Click(object sender, EventArgs e)
+        {
+            using (conn = new SqlConnection(ConnectionString.connectionString))
+            {
+                try
+                {
+                    if (cbbkh.Text != null)
+                    {
+                        conn.Open();
+                        string timSDT = "select * from tbl_KhachHang where sSDT LIKE'%" + cbbkh.Text + "%'";
+                        SqlCommand command = new SqlCommand(timSDT, conn);
+                        SqlDataAdapter a = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        a.Fill(dt);
+                        dghoadon.DataSource = dt;
+                    }
+                    else
+                    {
+                        loadDL();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối" + ex.Message);
+                }
+
             }
         }
     }

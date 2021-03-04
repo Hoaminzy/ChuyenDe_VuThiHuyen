@@ -43,7 +43,6 @@ namespace QLChauCay
             this.txtmakh = new System.Windows.Forms.TextBox();
             this.txtnglap = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbbkh = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dtngaylap = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -79,6 +78,8 @@ namespace QLChauCay
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
             this.tblHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btntk = new System.Windows.Forms.Button();
+            this.cbbkh = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,6 +110,8 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbkh);
+            this.groupBox1.Controls.Add(this.btntk);
             this.groupBox1.Controls.Add(this.cbbnv);
             this.groupBox1.Controls.Add(this.cbbstatus);
             this.groupBox1.Controls.Add(this.label4);
@@ -117,7 +120,6 @@ namespace QLChauCay
             this.groupBox1.Controls.Add(this.txtmakh);
             this.groupBox1.Controls.Add(this.txtnglap);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.cbbkh);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.dtngaylap);
             this.groupBox1.Controls.Add(this.label6);
@@ -205,14 +207,6 @@ namespace QLChauCay
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cbbkh
-            // 
-            this.cbbkh.FormattingEnabled = true;
-            this.cbbkh.Location = new System.Drawing.Point(118, 154);
-            this.cbbkh.Name = "cbbkh";
-            this.cbbkh.Size = new System.Drawing.Size(155, 21);
-            this.cbbkh.TabIndex = 11;
             // 
             // label14
             // 
@@ -562,6 +556,24 @@ namespace QLChauCay
             this.lbtongtien.TabIndex = 10;
             this.lbtongtien.Text = "label16";
             // 
+            // btntk
+            // 
+            this.btntk.Location = new System.Drawing.Point(257, 197);
+            this.btntk.Name = "btntk";
+            this.btntk.Size = new System.Drawing.Size(75, 23);
+            this.btntk.TabIndex = 25;
+            this.btntk.Text = "button2";
+            this.btntk.UseVisualStyleBackColor = true;
+            this.btntk.Click += new System.EventHandler(this.btntk_Click);
+            // 
+            // cbbkh
+            // 
+            this.cbbkh.FormattingEnabled = true;
+            this.cbbkh.Location = new System.Drawing.Point(118, 154);
+            this.cbbkh.Name = "cbbkh";
+            this.cbbkh.Size = new System.Drawing.Size(121, 21);
+            this.cbbkh.TabIndex = 11;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,7 +645,6 @@ namespace QLChauCay
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button txtdong;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbbkh;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txttongtien;
         private System.Windows.Forms.Label lbtongtien;
@@ -648,5 +659,7 @@ namespace QLChauCay
         private System.Windows.Forms.ComboBox cbbstatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox cbbnv;
+        private System.Windows.Forms.Button btntk;
+        private System.Windows.Forms.ComboBox cbbkh;
     }
 }
