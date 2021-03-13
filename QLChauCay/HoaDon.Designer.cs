@@ -35,6 +35,10 @@ namespace QLChauCay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txttenkh = new System.Windows.Forms.TextBox();
+            this.cbbkh = new System.Windows.Forms.ComboBox();
+            this.btntk = new System.Windows.Forms.Button();
             this.cbbnv = new System.Windows.Forms.TextBox();
             this.cbbstatus = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,8 +82,6 @@ namespace QLChauCay
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
             this.tblHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btntk = new System.Windows.Forms.Button();
-            this.cbbkh = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -110,6 +112,8 @@ namespace QLChauCay
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.txttenkh);
             this.groupBox1.Controls.Add(this.cbbkh);
             this.groupBox1.Controls.Add(this.btntk);
             this.groupBox1.Controls.Add(this.cbbnv);
@@ -134,6 +138,41 @@ namespace QLChauCay
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(16, 123);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(85, 13);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "Mã Khách Hàng";
+            // 
+            // txttenkh
+            // 
+            this.txttenkh.Location = new System.Drawing.Point(118, 149);
+            this.txttenkh.Name = "txttenkh";
+            this.txttenkh.ReadOnly = true;
+            this.txttenkh.Size = new System.Drawing.Size(180, 20);
+            this.txttenkh.TabIndex = 26;
+            // 
+            // cbbkh
+            // 
+            this.cbbkh.FormattingEnabled = true;
+            this.cbbkh.Location = new System.Drawing.Point(118, 172);
+            this.cbbkh.Name = "cbbkh";
+            this.cbbkh.Size = new System.Drawing.Size(121, 21);
+            this.cbbkh.TabIndex = 11;
+            // 
+            // btntk
+            // 
+            this.btntk.Location = new System.Drawing.Point(236, 172);
+            this.btntk.Name = "btntk";
+            this.btntk.Size = new System.Drawing.Size(21, 23);
+            this.btntk.TabIndex = 25;
+            this.btntk.Text = "button2";
+            this.btntk.UseVisualStyleBackColor = true;
+            this.btntk.Click += new System.EventHandler(this.btntk_Click);
+            // 
             // cbbnv
             // 
             this.cbbnv.Location = new System.Drawing.Point(118, 100);
@@ -149,7 +188,7 @@ namespace QLChauCay
             this.cbbstatus.Items.AddRange(new object[] {
             "1",
             "0"});
-            this.cbbstatus.Location = new System.Drawing.Point(118, 181);
+            this.cbbstatus.Location = new System.Drawing.Point(118, 199);
             this.cbbstatus.Name = "cbbstatus";
             this.cbbstatus.Size = new System.Drawing.Size(180, 21);
             this.cbbstatus.TabIndex = 23;
@@ -157,7 +196,7 @@ namespace QLChauCay
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 183);
+            this.label4.Location = new System.Drawing.Point(16, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 22;
@@ -166,11 +205,11 @@ namespace QLChauCay
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 131);
+            this.label17.Location = new System.Drawing.Point(16, 149);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 13);
+            this.label17.Size = new System.Drawing.Size(89, 13);
             this.label17.TabIndex = 21;
-            this.label17.Text = "Mã Khách Hàng";
+            this.label17.Text = "Tên Khách Hàng";
             // 
             // label16
             // 
@@ -183,7 +222,7 @@ namespace QLChauCay
             // 
             // txtmakh
             // 
-            this.txtmakh.Location = new System.Drawing.Point(118, 128);
+            this.txtmakh.Location = new System.Drawing.Point(118, 126);
             this.txtmakh.Name = "txtmakh";
             this.txtmakh.ReadOnly = true;
             this.txtmakh.Size = new System.Drawing.Size(180, 20);
@@ -200,7 +239,7 @@ namespace QLChauCay
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Chartreuse;
-            this.button1.Location = new System.Drawing.Point(275, 152);
+            this.button1.Location = new System.Drawing.Point(263, 172);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 12;
@@ -211,7 +250,7 @@ namespace QLChauCay
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 157);
+            this.label14.Location = new System.Drawing.Point(16, 175);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 13);
             this.label14.TabIndex = 10;
@@ -496,6 +535,7 @@ namespace QLChauCay
             this.btnhuy.TabIndex = 3;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
+            this.btnhuy.Click += new System.EventHandler(this.btnhuy_Click);
             // 
             // btnsua
             // 
@@ -555,24 +595,6 @@ namespace QLChauCay
             this.lbtongtien.Size = new System.Drawing.Size(52, 16);
             this.lbtongtien.TabIndex = 10;
             this.lbtongtien.Text = "label16";
-            // 
-            // btntk
-            // 
-            this.btntk.Location = new System.Drawing.Point(257, 197);
-            this.btntk.Name = "btntk";
-            this.btntk.Size = new System.Drawing.Size(75, 23);
-            this.btntk.TabIndex = 25;
-            this.btntk.Text = "button2";
-            this.btntk.UseVisualStyleBackColor = true;
-            this.btntk.Click += new System.EventHandler(this.btntk_Click);
-            // 
-            // cbbkh
-            // 
-            this.cbbkh.FormattingEnabled = true;
-            this.cbbkh.Location = new System.Drawing.Point(118, 154);
-            this.cbbkh.Name = "cbbkh";
-            this.cbbkh.Size = new System.Drawing.Size(121, 21);
-            this.cbbkh.TabIndex = 11;
             // 
             // HoaDon
             // 
@@ -661,5 +683,7 @@ namespace QLChauCay
         private System.Windows.Forms.TextBox cbbnv;
         private System.Windows.Forms.Button btntk;
         private System.Windows.Forms.ComboBox cbbkh;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txttenkh;
     }
 }

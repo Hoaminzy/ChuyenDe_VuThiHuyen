@@ -57,7 +57,6 @@ namespace QLChauCay
                     MessageBox.Show("Lỗi kết nối" + ex.Message);
                 }
             }
-        //    mahoaMK(txtmatkhau.Text);
         }
 
         private void btnthoat_Click(object sender, EventArgs e)

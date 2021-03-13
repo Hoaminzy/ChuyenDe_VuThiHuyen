@@ -68,7 +68,7 @@ namespace QLChauCay
             this.CRHoaDon.Name = "CRHoaDon";
             this.CRHoaDon.Size = new System.Drawing.Size(1036, 488);
             this.CRHoaDon.TabIndex = 2;
-            this.CRHoaDon.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            this.CRHoaDon.Load += new System.EventHandler(this.CRHoaDon_Load);
             // 
             // panel2
             // 
@@ -117,7 +117,6 @@ namespace QLChauCay
             this.Controls.Add(this.panel1);
             this.Name = "frm_RPHoaDon";
             this.Text = "frm_RPHoaDon";
-            this.Load += new System.EventHandler(this.frm_RPHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

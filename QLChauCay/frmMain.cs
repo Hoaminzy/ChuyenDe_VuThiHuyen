@@ -75,7 +75,7 @@ namespace QLChauCay
                 data1 = new DataTable();
                 a.Fill(data1);
                 dgCthoadon.DataSource = data1;
-                hoadon.maHD = dgCthoadon.Rows[i].Cells[0].Value.ToString();
+           //     hoadon.maHD = dgCthoadon.Rows[i].Cells[0].Value.ToString();
                 conn.Close();
             }
             catch (SqlException sql)

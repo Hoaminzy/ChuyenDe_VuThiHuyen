@@ -182,6 +182,7 @@ namespace QLChauCay
                                 string query = "Insert_NhanVien";
                                 cmd = new SqlCommand(query, conn);
                                 cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idNhanVien", txtten.Text);
                                 cmd.Parameters.AddWithValue("@sTenNV", txtten.Text);
                                 cmd.Parameters.AddWithValue("@sDiaChi", txtdiachi.Text);
                                 cmd.Parameters.AddWithValue("@sCMND", txtcmnd.Text);
@@ -320,9 +321,9 @@ namespace QLChauCay
             {
                 conn = new SqlConnection(ConnectionString.connectionString);
                 conn.Open();
-             //   string query = "delete from tblNhanVien where idNhanVien= '" + txtma.Text + "' ";
-                string query = "Delete_KhachHang";
-                cmd.Parameters.AddWithValue("@idNhanVien", txtma.Text);
+                string query = "delete from tbl_NhanVien where idNhanVien= '" + txtma.Text + "' ";
+                /*       string query = "Delete_NhanVien";
+                       cmd.Parameters.AddWithValue("@idNhanVien", txtma.Text);*/
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdsnhanvien.DataSource;

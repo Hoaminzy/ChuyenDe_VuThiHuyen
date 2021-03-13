@@ -139,7 +139,7 @@ namespace QLChauCay
                 string query = "delete from tbl_KhachHang where idKhachHang ='" + txtma.Text + "'";
               //  string query = "Delete_KhachHang";
 
-                cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
+             //  cmd.Parameters.AddWithValue("@idKhachHang", txtma.Text);
                 cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 DataTable dt = (DataTable)drdskhachhang.DataSource;
@@ -181,14 +181,14 @@ namespace QLChauCay
                     {
                         MessageBox.Show("Sô điện thoại đã được sử dụng!");
                     }
-                    else
+                   /* else
                     {
                       
-                        //if (kiemtratontai()==true) {
-                        //    MessageBox.Show("Sô điện thoại đã được sử dụng!");
-                        //}
-                        //else
-                        //{
+                        if (kiemtratontai()==true) {
+                           MessageBox.Show("Sô điện thoại đã được sử dụng!");
+                        }*/
+                        else
+                        {
 
                         
                             string query = "Insert_KhachHang";
@@ -226,8 +226,8 @@ namespace QLChauCay
                             {
                                 MessageBox.Show("Thêm thất bại.");
                             }
-                        //}
-                    }    
+                        }
+                   /* }    */
                 }
                 catch (Exception ex)
                 {
@@ -262,7 +262,7 @@ namespace QLChauCay
             {
                 conn.Open();
                 DataTable dt1 = new DataTable();//check trùng SDT
-                string sqlSelect1 = "Select sSDT from tbl_KhachHang where sSDt='" + txtsdt.Text + "'";
+                string sqlSelect1 = "Select tbl_KhachHang.sSDT from tbl_KhachHang where sSDt='" + txtsdt.Text + "'";
                 SqlDataAdapter da1 = new SqlDataAdapter(sqlSelect1, conn);
                 da1.Fill(dt1);
                 try
@@ -272,11 +272,11 @@ namespace QLChauCay
                         
                         MessageBox.Show("Hãy nhập đầy đủ thông tin.");
 
-                    }else if (dt1.Rows.Count > 0)
+                    }/*else if (dt1.Rows.Count > 0)
                     {
                         MessageBox.Show("Số điện thoại đã được sử dụng!");
 
-                    }
+                    }*/
 
                     else
                     {
@@ -287,14 +287,6 @@ namespace QLChauCay
                         cmd.Parameters.AddWithValue("@sTenKH", txtten.Text);
                         cmd.Parameters.AddWithValue("@sDiaChi", txtdiachi.Text);
                         cmd.Parameters.AddWithValue("@sCMND", txtcmnd.Text);
-                        /*  if (rdnam.Checked == true)
-                          {
-                              cmd.Parameters.AddWithValue("@sGioiTinh", rdnam.Text);
-                          }
-                          else
-                          {
-                              cmd.Parameters.AddWithValue("@sGioiTinh", rdnu.Text);
-                          }*/
                         string gt;
                         if (rdnam.Checked)
                             gt = "Nam";
